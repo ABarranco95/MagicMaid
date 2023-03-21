@@ -1,20 +1,26 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #1e90ff;
-  }
-  
-  .logo {
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-  
-  .phone {
-    color: white;
-    font-weight: bold;
-  }
-  
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: bold;
+  color: #0d47a1;
+  text-decoration: none;
+}
+
+.logoLink {
+  text-decoration: none;
+}
+
+.phone {
+  color: #0d47a1;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.phoneLink {
+  color: #0d47a1;
+  text-decoration: none;
+}

@@ -1,50 +1,26 @@
-.container {
-    text-align: center;
-    padding: 2rem;
-    background-color: white;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .heading {
-    color: #1e90ff;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .subheading {
-    font-weight: normal;
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-  }
-  
-  .text {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-  
-  .highlight {
-    color: #1e90ff;
-    font-weight: bold;
-  }
-  
-  .button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #1e90ff;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #1a73d1;
-  }
-  
+.hero {
+  padding: 4rem 0;
+}
+
+.sectionTitle {
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.services {
+  padding: 4rem 0;
+}
+
+.testimonials {
+  padding: 4rem 0;
+  background-color: #f5f5f5;
+}
+
+.callToAction {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.ctaButton {
+  margin: 0 1rem;
+}
