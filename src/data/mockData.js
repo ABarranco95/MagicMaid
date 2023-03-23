@@ -1,41 +1,52 @@
+import StandardImage from '../assets/Standard.jpg';
+import DeepImage from '../assets/Deep.jpg';
+import MovingImage from '../assets/Moving.jpg';
+
 const servicesData = [
-    {
-      title: 'Standard Cleaning',
-      description: 'Our standard cleaning service covers all the essential areas of your home to maintain a tidy and healthy environment. This includes dusting, vacuuming, mopping, bathroom sanitation, and kitchen cleaning.',
-      imageUrl: 'https://via.placeholder.com/250',
-    },
-    {
-      title: 'Deep Cleaning',
-      description: 'Our deep cleaning service provides a comprehensive and detailed clean, reaching every corner and crevice of your home. This service is perfect for homes that need a little extra attention and care.',
-      imageUrl: 'https://via.placeholder.com/250',
-    },
-    {
-      title: 'Move-in/Move-out Cleaning',
-      description: 'Our move-in/move-out cleaning service ensures that your new home is spotless before you move in, or your old home is left in perfect condition for the next residents. We take care of everything, from deep cleaning carpets to scrubbing kitchen appliances.',
-      imageUrl: 'https://via.placeholder.com/250',
-    },
-  ];
-  
-  const testimonialsData = [
-    {
-      name: 'John Doe',
-      quote: 'Magic Maid provided a fantastic cleaning service! Our home has never been cleaner. The team was punctual, professional, and incredibly thorough. Highly recommended!',
-      imageUrl: 'https://via.placeholder.com/100',
-      rating: 5,
-    },
-    {
-      name: 'Jane Smith',
-      quote: 'The deep cleaning service from Magic Maid exceeded our expectations. They paid attention to every detail and left our home sparkling clean. We will definitely use their services again.',
-      imageUrl: 'https://via.placeholder.com/100',
-      rating: 5,
-    },
-    {
-      name: 'Mark Brown',
-      quote: "I've been using Magic Maid's standard cleaning service for over a year now, and they never disappoint. The cleaners are always friendly, efficient, and do an excellent job. Highly recommended!",
-      imageUrl: 'https://via.placeholder.com/100',
-      rating: 4.5,
-    },
-  ];
-  
-  export { servicesData, testimonialsData };
-  
+  {
+    title: 'Standard Cleaning',
+    description: 'Our standard cleaning service covers all the essential areas of your home to maintain a tidy and healthy environment. This includes dusting, vacuuming, mopping, bathroom sanitation, and kitchen cleaning.',
+    imageUrl: StandardImage,
+  },
+  {
+    title: 'Deep Cleaning',
+    description: 'Our deep cleaning service provides a comprehensive and detailed clean, reaching every corner and crevice of your home. This service is perfect for homes that need a little extra attention and care.',
+    imageUrl: DeepImage,
+  },
+  {
+    title: 'Move-in/Move-out Cleaning',
+    description: 'Our move-in/move-out cleaning service ensures that your new home is spotless before you move in, or your old home is left in perfect condition for the next residents. We take care of everything, from deep cleaning carpets to scrubbing kitchen appliances.',
+    imageUrl: MovingImage,
+  },
+];
+
+
+
+const testimonialsData = [
+  {
+    quote: "Magic Maid did an amazing job cleaning my house! The team was friendly and professional, and the results were fantastic.",
+    author: "John Doe",
+    location: "Clovis, CA",
+    rating: 5,
+    stars: 5,
+  },
+  {
+    quote: "I've been using Magic Maid for over a year now and they always do a great job. The cleaners are thorough and efficient, and the customer service is top-notch.",
+    author: "Jane Smith",
+    location: "Madera, CA",
+    rating: 5,
+    stars: 5,
+  },
+  {
+    quote: "Magic Maid provides excellent service at a reasonable price. I highly recommend them for anyone looking for a reliable cleaning service.",
+    author: "Bob Johnson",
+    location: "Fresno, CA",
+    rating: 5,
+    stars: 5,
+  },
+  // Add more testimonials here
+];
+
+
+
+export { servicesData, testimonialsData };

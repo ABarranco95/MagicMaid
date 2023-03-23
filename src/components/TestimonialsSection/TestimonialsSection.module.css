@@ -1,0 +1,81 @@
+:root {
+  --primary-color: #1e50ae;
+  --secondary-color: #4d7cfe;
+  --text-color: #fff;
+  --secondary-text-color: #333;
+  --background-color: #f8f8f8;
+  --secondary-background-color: #fff;
+}
+
+/* TestimonialsSection.module.css */
+
+.testimonials {
+  background-color: var(--background-color);
+  padding: 80px 0;
+}
+
+.testimonials .sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--secondary-text-color);
+  text-align: center;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.testimonials .gridItem {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.testimonialCard {
+  background-color: var(--secondary-background-color);
+  box-shadow: var(--testimonial-shadow);
+  border: var(--testimonial-border);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.testimonialQuote {
+  font-size: 24px;
+  color: var(--secondary-text-color);
+  margin-bottom: 20px;
+}
+
+.testimonialAuthor {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.testimonialPosition {
+  font-size: 16px;
+  color: var(--secondary-text-color);
+  margin-bottom: 0;
+}
+
+.starIcon {
+  color: #fdb813;
+  margin-right: 4px;
+}
+
+.starRating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.starRating span {
+  font-size: 20px;
+  color: var(--secondary-color);
+  margin-right: 10px;
+}
+
+.testimonialCard.alt {
+  background-color: var(--secondary-background-color);
+}

@@ -1,26 +1,6 @@
-.hero {
-  padding: 4rem 0;
-}
+/* HomePage.module.css */
 
-.sectionTitle {
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-
-.services {
-  padding: 4rem 0;
-}
-
-.testimonials {
-  padding: 4rem 0;
-  background-color: #f5f5f5;
-}
-
-.callToAction {
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.ctaButton {
-  margin: 0 1rem;
-}
+@import url('./HeroSection.module.css');
+@import url('./ServicesSection.module.css');
+@import url('./TestimonialsSection.module.css');
+@import url('./CallToActionSection.module.css');

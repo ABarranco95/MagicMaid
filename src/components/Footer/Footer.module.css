@@ -1,0 +1,94 @@
+/* Footer.module.css */
+
+.footer {
+    background-color: #111;
+    color: #fff;
+    padding: 30px 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .links,
+  .locations,
+  .social {
+    flex: 1 1 100%;
+    margin-bottom: 30px;
+  }
+  
+  .links ul,
+  .locations ul,
+  .social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .links li,
+  .locations li,
+  .social li {
+    margin-bottom: 10px;
+  }
+  
+  .links h3,
+  .locations h3,
+  .social h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .links a,
+  .locations a,
+  .social a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .copywrite {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 30px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .container {
+      flex-wrap: nowrap;
+    }
+  
+    .links,
+    .locations,
+    .social {
+      flex-basis: calc(33.33% - 20px);
+      margin-bottom: 0;
+    }
+  
+    .links,
+    .locations {
+      margin-right: 20px;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    .container {
+      justify-content: space-between;
+    }
+  
+    .links,
+    .locations,
+    .social {
+      flex-basis: calc(33.33% - 20px);
+    }
+  
+    .links,
+    .locations {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+  
