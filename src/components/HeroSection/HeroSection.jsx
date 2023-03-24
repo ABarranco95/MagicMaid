@@ -17,8 +17,8 @@ const HeroSection = () => {
           At Magic Maid, we take pride in providing the highest quality cleaning services in the Fresno, CA area. Our team of experienced cleaners are dedicated to making your home look and feel its best.
         </p>
         <div className={styles.ctaContainer}>
-          <a href="https://magicmaidhousecleaning.com/booknow/home_cleaning" className={styles.ctaButton}>Book Online Now</a>
-          <a href="tel:(559) 785-2857" className={styles.phoneButton}>Call us: (559) 785-2857</a>
+          <a href="https://themagicmaidcleaning.bookingkoala.com/booknow/home_cleaning" className={styles.ctaButton}>Book Online Now</a>
+          <a href="tel:5597852857" className={styles.phoneButton}>Call us: (559) 785-2857</a>
         </div>
       </div>
     </section>

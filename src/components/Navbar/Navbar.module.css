@@ -21,9 +21,9 @@
   width: 100%;
   z-index: 100;
 }
-
 .container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -31,12 +31,12 @@
 
 .brand {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .brand img {
-  height: 40px;
-  margin-right: 10px;
+  height: 60px;
+  /* margin-right: 10px; */
 }
 
 .brand h1 {
@@ -46,6 +46,7 @@
 }
 
 .menu {
+  order: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -179,3 +180,23 @@
   .logoutButton svg {
   margin-right: 0.5rem;
   }
+
+  .bookNowButton,
+.phoneIcon {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-left: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.bookNowButton:hover,
+.phoneIcon:hover {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}

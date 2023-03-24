@@ -8,9 +8,9 @@ const Footer = () => {
         <div className={styles.links}>
           <h3>Our Services</h3>
           <ul>
-            <li><a href="#">Standard Cleaning</a></li>
-            <li><a href="#">Deep Cleaning</a></li>
-            <li><a href="#">Moving Cleaning</a></li>
+            <li><a href="/cleanings/standard-cleaning">Standard Cleaning</a></li>
+            <li><a href="/cleanings/deep-cleaning">Deep Cleaning</a></li>
+            <li><a href="/cleanings/moving-cleaning">Moving Cleaning</a></li>
           </ul>
         </div>
         <div className={styles.locations}>

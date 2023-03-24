@@ -1,8 +1,9 @@
 import React from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from './Navbar.module.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -15,8 +16,9 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.brand}>
-          <img src={logo} alt="Logo" />
-          <h1 className={styles.brandName}>Magic Maid</h1>
+          <Link to="/">
+            <img src={logo} alt="Magic Maid" />
+          </Link>
         </div>
         <div className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
           <button className={styles.closeButton} onClick={toggleMenu}>
@@ -24,16 +26,13 @@ const Navbar = () => {
           </button>
           <ul className={styles.menuList}>
             <li>
-              <a href="#">Cleanings</a>
+              <Link to="/cleanings">Cleanings</Link>
             </li>
             <li>
-              <a href="#">Book Now</a>
+              <a href="https://themagicmaidcleaning.bookingkoala.com/booknow/home_cleaning" target="_blank" rel="noopener noreferrer">Book Now</a>
             </li>
             <li>
-              <a href="#">About Us</a>
-            </li>
-            <li>
-              <a href="#">Contact Us</a>
+              <a href="tel:5597852857">Contact Us</a>
             </li>
           </ul>
         </div>
