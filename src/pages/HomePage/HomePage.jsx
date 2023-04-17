@@ -14,7 +14,7 @@ const HomePage = () => {
       {/* <LeadForm /> */}
       <TestimonialsSection />
       <CallToActionSection />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
