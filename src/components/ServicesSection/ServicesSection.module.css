@@ -1,12 +1,3 @@
-:root {
-  --primary-color: #1e50ae;
-  --secondary-color: #4d7cfe;
-  --text-color: #fff;
-  --secondary-text-color: #333;
-  --background-color: #f8f8f8;
-  --secondary-background-color: #fff;
-}
-
 /* ServicesSection.module.css */
 
 .services {
@@ -28,36 +19,23 @@
   color: var(--secondary-text-color);
 }
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 40px;
-  margin-top: 40px;
-}
-
-@media screen and (min-width: 768px) {
-  .gridContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .gridContainer {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.gridItem {
+.serviceList {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 40px;
 }
 
-.serviceCard {
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--secondary-background-color);
-  box-shadow: var(--card-shadow);
+  padding: 20px;
   border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  box-shadow: var(--card-shadow);
+  width: 100%;
+  max-width: 350px;
 }
 
 .serviceImage {
@@ -67,46 +45,32 @@
   border-radius: 20px 20px 0 0;
 }
 
-.service-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-
 .serviceTitle {
   font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin: 20px 0;
   color: var(--secondary-text-color);
   text-align: center;
 }
 
-.serviceDescription {
+.serviceTasks {
   font-size: 1rem;
   line-height: 1.5;
-  text-align: center;
   color: #777;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.ctaButton {
-  display: block;
-  margin: 20px auto 0;
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: center;
-  color: var(--text-color);
-  background-color: var(--secondary-color);
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  width: fit-content;
+.serviceTasks li {
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+  position: relative;
 }
 
-.ctaButton:hover {
-  background-color: var(--primary-color);
+.serviceTasks li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
 }

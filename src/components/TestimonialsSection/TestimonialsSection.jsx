@@ -16,9 +16,9 @@ const TestimonialsSection = () => {
                 <div className={styles.testimonialCard}>
                   <p className={styles.testimonialQuote}>{testimonial.quote}</p>
                   <div className={styles.testimonialRating}>
-                  {[...Array(parseInt(testimonial.stars) || 0)].map((_, i) => (
-    <FontAwesomeIcon key={i} icon={faStar} className={styles.starIcon} />
-  ))}
+                    {[...Array(parseInt(testimonial.stars) || 0)].map((_, i) => (
+                      <FontAwesomeIcon key={i} icon={faStar} className={styles.starIcon} />
+                    ))}
                   </div>
                   <p className={styles.testimonialAuthor}>{testimonial.author}</p>
                   <p className={styles.testimonialPosition}>{testimonial.position}</p>

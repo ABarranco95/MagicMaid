@@ -1,0 +1,9 @@
+
+.leadFormTitle {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+

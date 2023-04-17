@@ -7,11 +7,9 @@
   --secondary-background-color: #fff;
 }
 
-/* Navbar.module.css */
-
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: var(--secondary-background-color);
   padding: 20px;
@@ -21,28 +19,23 @@
   width: 100%;
   z-index: 100;
 }
+
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 500px;
+  width: 90%;
+  margin-right: 30px;
 }
 
 .brand {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .brand img {
   height: 60px;
-  /* margin-right: 10px; */
-}
-
-.brand h1 {
-  font-size: 2rem;
-  color: var(--secondary-text-color);
-  font-weight: 500;
 }
 
 .menu {
@@ -81,38 +74,38 @@
   justify-content: center;
   height: 100%;
   text-align: center;
-}
-
-.menuList li {
+  }
+  
+  .menuList li {
   margin-bottom: 1rem;
-}
-
-.menuList a {
+  }
+  
+  .menuList a {
   text-decoration: none;
   color: var(--secondary-text-color);
   font-size: 1.5rem;
   font-weight: 500;
   transition: all 0.3s ease-in-out;
-}
-
-.menuList a:hover {
+  }
+  
+  .menuList a:hover {
   color: var(--primary-color);
-}
-
-.menuButton {
+  }
+  
+  .menuButton {
   background-color: transparent;
   border: none;
   font-size: 2rem;
   color: var(--secondary-text-color);
   cursor: pointer;
-  margin-left: 20px;
   transition: all 0.3s ease-in-out;
-}
-
-.menuButton:hover {
+  }
+  
+  .menuButton:hover {
   color: var(--primary-color);
-}
-@media (min-width: 768px) {
+  }
+  
+  @media (min-width: 768px) {
   .container {
   max-width: 960px;
   margin: 0 auto;
@@ -141,62 +134,3 @@
   display: none;
   }
   }
-  
-  .navLink {
-  text-decoration: none;
-  color: var(--text-color);
-  font-size: 1.5rem;
-  margin-left: 2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease-in-out;
-  }
-  
-  .navLink:hover {
-  background-color: var(--secondary-color);
-  }
-  
-  .navLink.active {
-  background-color: var(--secondary-color);
-  }
-  
-  .logoutButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--text-color);
-  font-size: 1.5rem;
-  margin-left: 2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease-in-out;
-  }
-  
-  .logoutButton:hover {
-  background-color: var(--secondary-color);
-  }
-  
-  .logoutButton svg {
-  margin-right: 0.5rem;
-  }
-
-  .bookNowButton,
-.phoneIcon {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 50px;
-  padding: 10px 20px;
-  margin-left: 20px;
-  transition: all 0.2s ease-in-out;
-}
-
-.bookNowButton:hover,
-.phoneIcon:hover {
-  background-color: var(--secondary-color);
-  color: var(--background-color);
-}
