@@ -18,12 +18,12 @@ const HeroSection = () => {
         </h4>
         <div className={styles.ctaContainer}>
           <a
-            href="https://themagicmaidcleaning.bookingkoala.com/booknow/home_cleaning"
+            href="/booking-form"
             className={styles.ctaButton}
           >
             Book Online Now
           </a>
-          <a href="#quote-form" className={styles.ctaButtonAlt}>
+          <a href="/quote-form" className={styles.ctaButtonAlt}>
             Get a Free Quote
           </a>
         </div>

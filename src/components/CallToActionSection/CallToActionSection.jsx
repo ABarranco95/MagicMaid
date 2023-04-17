@@ -6,10 +6,10 @@ const CallToActionSection = () => {
     <div className={`${styles.callToAction} testimonialCard`}>
       <h4 className={styles.sectionTitle}>Ready for a Sparkling Clean Home?</h4>
       <div className={styles.buttonsContainer}>
-        <a href="https://themagicmaidcleaning.bookingkoala.com/booknow/home_cleaning" className={styles.ctaButton}>
+        <a href="/booking-form" className={styles.ctaButton}>
           Book Now
         </a>
-        <a href="/get-a-quote" className={styles.ctaButton}>
+        <a href="/quote-form" className={styles.ctaButton}>
           Get a Quote
         </a>
       </div>

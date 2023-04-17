@@ -8,6 +8,7 @@ import DeepCleanPage from './pages/CleaningsPage/DeepCleanPage/DeepCleanPage.jsx
 import MovingCleanPage from './pages/CleaningsPage/MovingCleanPage/MovingCleanPage';
 import LeadForm from './components/LeadForm/LeadForm';
 import Footer from './components/Footer/Footer';
+import BookingForm from './components/BookingForm/BookingForm';
 
 const App = () => {
   return (
@@ -16,10 +17,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/quote-form" element={<LeadForm /> }  />
+        <Route path="/booking-form" element={<BookingForm /> }  />
         <Route path="/cleanings" element={<CleaningsPage />} />
-        <Route path="/cleanings/standard-cleaning" element={<StandardCleanPage />} />
-        <Route path="/cleanings/deep-cleaning" element={<DeepCleanPage />} />
-        <Route path="/cleanings/moving-cleaning" element={<MovingCleanPage />} />
       </Routes>
       <Footer />
     </Router>

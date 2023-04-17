@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import styles from './LeadForm.module.css';
+import styles from './BookingForm.module.css';
 
-const LeadForm = () => {
+const BookingForm = () => {
   const iframeRef = useRef(null);
 
   useEffect(() => {
@@ -15,12 +15,23 @@ const LeadForm = () => {
     return () => window.removeEventListener('message', handleMessage);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (iframeRef.current) {
+        iframeRef.current.style.height = '100vh';
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div className={styles.leadForm}>
-      <h2 className={styles.leadFormTitle}>Get a Free Quote</h2>
+    <div className={styles.bookingForm}>
       <iframe
         ref={iframeRef}
-        src="https://themagicmaidcleaning.bookingkoala.com/contact-us?embed=true"
+        src="https://themagicmaidcleaning.bookingkoala.com/booknow/home_cleaning?embed=true&bar=false"
         style={{ border: 'none', height: '100vh' }}
         width="100%"
         scrolling="yes"
@@ -30,4 +41,4 @@ const LeadForm = () => {
   );
 };
 
-export default LeadForm;
+export default BookingForm;
