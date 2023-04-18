@@ -9,6 +9,14 @@ const LeadForm = () => {
       if (event.data.type === 'setHeight' && iframeRef.current) {
         iframeRef.current.style.height = `${event.data.height}px`;
       }
+
+      // Listen for the formSubmitted event from the form provider
+      if (event.data.type === 'formSubmitted') {
+        // Trigger the conversion event
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-10984594222/VloLCILLvYgYEK627vUo',
+        });
+      }
     };
 
     window.addEventListener('message', handleMessage);

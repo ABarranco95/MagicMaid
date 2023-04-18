@@ -1,3 +1,30 @@
 .bookingForm {
     margin-top: 100px;
 }
+
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dropdown {
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .bookingFormNoCity {
+    min-height: 80vh; /* Adjust this value according to your preference */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  

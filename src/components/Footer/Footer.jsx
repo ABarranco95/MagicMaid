@@ -16,15 +16,19 @@ const Footer = () => {
         <div className={styles.locations}>
           <h3>Locations</h3>
           <ul>
-            <li>Madera</li>
-            <li>Fresno</li>
-            <li>Clovis</li>
+            <li>Madera, CA</li>
+            <li>Fresno, CA</li>
+            <li>Clovis, CA</li>
+            <li>Sacramento, CA</li>
+            <li>Raleigh, NC</li>
           </ul>
         </div>
         <div className={styles.social}>
           <h3>Contact Us</h3>
           <ul>
-            <li><a href="tel:+15597852857">(559) 785-2857</a></li>
+            <li><a href="tel:+15597852857"> Fresno (559) 785-2857</a></li>
+            <li><a href="tel:+12792030447"> Sacramento (279) 203-0447</a></li>
+            <li><a href="tel:+19847778308"> Raleigh (984) 777-8308</a></li>
             <li><a href="mailto:magicmaidhousecleaning@gmail.com">magicmaidhousecleaning@gmail.com</a></li>
           </ul>
         </div>
