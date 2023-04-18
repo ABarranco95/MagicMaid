@@ -4,7 +4,7 @@
   --text-color: #fff;
   --secondary-text-color: #333;
   --background-color: #f8f8f8;
-  --overlay-color: rgba(0, 0, 0, 0.4);
+  --overlay-color: rgba(0, 0, 0, 0.55);
 }
 
 .hero {
@@ -114,4 +114,28 @@ margin-bottom: 2rem;
 padding: 0.8rem 2rem;
 font-size: 1rem;
 }
+}
+
+.phoneNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.phoneNumber {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--secondary-text-color);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .phoneNumbers {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
 }
