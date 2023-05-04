@@ -40,6 +40,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link to="/lead-form" onClick={handleLinkClick}>
+                Get Quote
+              </Link>
+            </li>
+            <li>
               <Link to="/gift-cards" onClick={handleLinkClick}>
                 Gift Cards
               </Link>

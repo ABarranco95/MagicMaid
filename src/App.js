@@ -21,6 +21,7 @@ const App = () => {
         <Route path="/booking-form" element={<BookingForm /> }  />
         <Route path="/cleanings" element={<CleaningsPage />} />
         <Route path="/gift-cards" element={<GiftCards />} />
+        <Route path="/lead-form" element={<LeadForm />} />
       </Routes>
       <Footer />
     </Router>
