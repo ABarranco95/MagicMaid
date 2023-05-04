@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import styles from './BookingForm.module.css';
 
 const BookingForm = () => {
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedCity, setSelectedCity] = useState('');
+
   const iframeRef = useRef(null);
 
   useEffect(() => {
@@ -44,24 +45,23 @@ const BookingForm = () => {
 
   return (
     <div className={selectedCity ? styles.bookingForm : styles.bookingFormNoCity}>
-     <div className={styles.dropdownContainer}>
-      <h2>Book a Cleaning in Your City</h2>
-      <select value={selectedCity} onChange={handleCityChange} className={styles.dropdown}>
-        <option value="" disabled>Select a city</option>
-        <option value="Madera">Madera, CA</option>
-        <option value="Fresno">Fresno, CA</option>
-        <option value="Clovis">Clovis, CA</option>
-        <option value="Sacramento">Sacramento, CA</option>
-        <option value="Raleigh">Raleigh, NC</option>
-      </select>
-    </div>
-
-      {selectedCity &&
-        (selectedCity === 'Raleigh'
+      {!selectedCity ? ( // Update this condition
+        <div className={styles.dropdownContainer}>
+          <h2>Book a Cleaning in Your City</h2>
+          <select value={selectedCity} onChange={handleCityChange} className={styles.dropdown}>
+            <option value="" disabled>Select a city</option>
+            <option value="Madera">Madera, CA</option>
+            <option value="Fresno">Fresno, CA</option>
+            <option value="Clovis">Clovis, CA</option>
+            <option value="Raleigh">Raleigh, NC</option>
+          </select>
+        </div>
+      ) : (
+        // Render the iframe only when a city is selected
+        selectedCity === 'Raleigh'
           ? renderIframe("https://themagicmaidcleaning.bookingkoala.com/booknow/raleigh-house-cleaning?embed=true&bar=false")
           : renderIframe("https://themagicmaidcleaning.bookingkoala.com/booknow/home_cleaning?embed=true&bar=false")
-        )
-      }
+      )}
       <script src="https://themagicmaidcleaning.bookingkoala.com/resources/embed.js" defer></script>
     </div>
   );
