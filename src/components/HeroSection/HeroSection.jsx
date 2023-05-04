@@ -11,10 +11,10 @@ const HeroSection = () => {
       <div className={styles.overlay}></div>
       <div className={styles.content}>
         <h1 className={styles.heading}>
-          Magic Maid: Your Trusted Home Cleaning Partner
+          Home Sparkle Pros: 
         </h1>
         <h4 className={styles.subheading}>
-          Professional Cleaning Services Tailored to Your Needs
+        Your Trusted Home Cleaning Pros
         </h4>
         {/* <div className={styles.phoneNumbers}>
           <span className={styles.phoneNumber}>Madera, CA: (559) 785-2857</span>

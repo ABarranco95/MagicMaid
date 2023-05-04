@@ -19,7 +19,6 @@ const Footer = () => {
             <li>Madera, CA</li>
             <li>Fresno, CA</li>
             <li>Clovis, CA</li>
-            <li>Sacramento, CA</li>
             <li>Raleigh, NC</li>
           </ul>
         </div>
@@ -27,14 +26,13 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <ul>
             <li><a href="tel:+15597852857"> Fresno (559) 785-2857</a></li>
-            <li><a href="tel:+12792030447"> Sacramento (279) 203-0447</a></li>
             <li><a href="tel:+19847778308"> Raleigh (984) 777-8308</a></li>
-            <li><a href="mailto:magicmaidhousecleaning@gmail.com">magicmaidhousecleaning@gmail.com</a></li>
+            <li><a href="mailto:homesparklepros@gmail.com">homesparklepros@gmail.com</a></li>
           </ul>
         </div>
       </div>
       <div className={styles.copywrite}>
-        <p>&copy; 2023 Magic Maid. All rights reserved.</p>
+        <p>&copy; 2023 Home Sparkle Pros. All rights reserved.</p>
       </div>
     </footer>
   );

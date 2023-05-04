@@ -24,21 +24,21 @@ const servicesData = [
 
 const testimonialsData = [
   {
-    quote: "Magic Maid did an amazing job cleaning my house! The team was friendly and professional, and the results were fantastic.",
+    quote: "Home Sparkle Pros did an amazing job cleaning my house! The team was friendly and professional, and the results were fantastic.",
     author: "James Rodriguez",
     location: "Clovis, CA",
     rating: 5,
     stars: 5,
   },
   {
-    quote: "I've been using Magic Maid for over a year now and they always do a great job. The cleaners are thorough and efficient, and the customer service is top-notch.",
+    quote: "I've been using Home Sparkle Pros for over a year now and they always do a great job. The cleaners are thorough and efficient, and the customer service is top-notch.",
     author: "Sarah Johnson",
     location: "Madera, CA",
     rating: 5,
     stars: 5,
   },
   {
-    quote: "Magic Maid provides excellent service at a reasonable price. I highly recommend them for anyone looking for a reliable cleaning service.",
+    quote: "Home Sparkle Pros provides excellent service at a reasonable price. I highly recommend them for anyone looking for a reliable cleaning service.",
     author: "Maria Hernandez",
     location: "Fresno, CA",
     rating: 5,
