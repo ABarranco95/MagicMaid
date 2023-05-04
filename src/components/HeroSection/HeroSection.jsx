@@ -16,13 +16,13 @@ const HeroSection = () => {
         <h4 className={styles.subheading}>
           Professional Cleaning Services Tailored to Your Needs
         </h4>
-        <div className={styles.phoneNumbers}>
+        {/* <div className={styles.phoneNumbers}>
           <span className={styles.phoneNumber}>Madera, CA: (559) 785-2857</span>
           <span className={styles.phoneNumber}>Fresno, CA: (559) 785-2857</span>
           <span className={styles.phoneNumber}>Clovis, CA: (559) 785-2857</span>
           <span className={styles.phoneNumber}>Sacramento, CA: (279) 203-0447</span>
           <span className={styles.phoneNumber}>Raleigh, NC: (984) 777-8308</span>
-        </div>
+        </div> */}
         <div className={styles.ctaContainer}>
           <a
             href="/booking-form"

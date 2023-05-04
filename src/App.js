@@ -9,6 +9,7 @@ import MovingCleanPage from './pages/CleaningsPage/MovingCleanPage/MovingCleanPa
 import LeadForm from './components/LeadForm/LeadForm';
 import Footer from './components/Footer/Footer';
 import BookingForm from './components/BookingForm/BookingForm';
+import GiftCards from './components/GiftCard/GiftCards';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/quote-form" element={<LeadForm /> }  />
         <Route path="/booking-form" element={<BookingForm /> }  />
         <Route path="/cleanings" element={<CleaningsPage />} />
+        <Route path="/gift-cards" element={<GiftCards />} />
       </Routes>
       <Footer />
     </Router>

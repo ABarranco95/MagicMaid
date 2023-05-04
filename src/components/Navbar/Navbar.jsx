@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className={styles.container}>
         <div className={styles.brand}>
           <Link to="/">
-            <img src={logo} alt="Magic Maid" />
+            <img src={logo} alt="Home Sparkle Pros" />
           </Link>
         </div>
         <div className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
@@ -29,7 +29,10 @@ const Navbar = () => {
               <Link to="/cleanings">Cleanings</Link>
             </li>
             <li>
-              <a href="https://themagicmaidcleaning.bookingkoala.com/booknow/home_cleaning" target="_blank" rel="noopener noreferrer">Book Now</a>
+              <Link to="/booking-form">Book Now</Link>
+            </li>
+            <li>
+              <Link to="/gift-cards">Gift Cards</Link>
             </li>
             <li>
               <a href="tel:5597852857">Contact Us</a>
