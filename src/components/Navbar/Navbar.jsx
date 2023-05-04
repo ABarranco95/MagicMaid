@@ -12,6 +12,10 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
@@ -26,16 +30,24 @@ const Navbar = () => {
           </button>
           <ul className={styles.menuList}>
             <li>
-              <Link to="/cleanings">Cleanings</Link>
+              <Link to="/cleanings" onClick={handleLinkClick}>
+                Cleanings
+              </Link>
             </li>
             <li>
-              <Link to="/booking-form">Book Now</Link>
+              <Link to="/booking-form" onClick={handleLinkClick}>
+                Book Now
+              </Link>
             </li>
             <li>
-              <Link to="/gift-cards">Gift Cards</Link>
+              <Link to="/gift-cards" onClick={handleLinkClick}>
+                Gift Cards
+              </Link>
             </li>
             <li>
-              <a href="tel:5597852857">Contact Us</a>
+              <a href="tel:5597852857" onClick={handleLinkClick}>
+                Contact Us
+              </a>
             </li>
           </ul>
         </div>
