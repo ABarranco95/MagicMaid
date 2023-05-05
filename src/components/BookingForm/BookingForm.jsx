@@ -59,10 +59,10 @@ const BookingForm = () => {
       ) : (
         // Render the iframe only when a city is selected
         selectedCity === 'Raleigh'
-          ? renderIframe("https://themagicmaidcleaning.bookingkoala.com/booknow/raleigh-house-cleaning?embed=true&bar=false")
-          : renderIframe("https://themagicmaidcleaning.bookingkoala.com/booknow/home_cleaning?embed=true&bar=false")
+          ? renderIframe("https://homesparklepros.bookingkoala.com/booknow/raleigh-house-cleaning?embed=true&bar=false")
+          : renderIframe("https://homesparklepros.bookingkoala.com/booknow/home_cleaning?embed=true&bar=false")
       )}
-      <script src="https://themagicmaidcleaning.bookingkoala.com/resources/embed.js" defer></script>
+      <script src="https://homesparklepros.bookingkoala.com/resources/embed.js" defer></script>
     </div>
   );
 };

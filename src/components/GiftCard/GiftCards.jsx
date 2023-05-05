@@ -22,17 +22,17 @@ const GiftCards = () => {
         return () => window.removeEventListener('message', handleMessage);
       }, []);
   return (
-    // <div><iframe src="https://themagicmaidcleaning.bookingkoala.com/gift-cards/send?embed=true" height="100%" width="100%" scrolling="yes"></iframe><script src="https://themagicmaidcleaning.bookingkoala.com/resources/embed.js" defer></script></div>
+    // <div><iframe src="https://homesparklepros.bookingkoala.com/gift-cards/send?embed=true" height="100%" width="100%" scrolling="yes"></iframe><script src="https://homesparklepros.bookingkoala.com/resources/embed.js" defer></script></div>
     <div className={styles.leadForm}>
     <h2 className={styles.leadFormTitle}>Get a Free Quote</h2>
     <iframe
       ref={iframeRef}
-      src="https://themagicmaidcleaning.bookingkoala.com/gift-cards/send?embed=true"
+      src="https://homesparklepros.bookingkoala.com/gift-cards/send?embed=true"
       style={{ border: 'none', height: '100vh' }}
       width="100%"
       scrolling="yes"
     ></iframe>
-    <script src="https://themagicmaidcleaning.bookingkoala.com/resources/embed.js" defer></script>
+    <script src="https://homesparklepros.bookingkoala.com/resources/embed.js" defer></script>
   </div>
     )
 }
