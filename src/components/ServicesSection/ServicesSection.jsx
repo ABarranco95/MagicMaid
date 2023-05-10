@@ -13,7 +13,7 @@ const ServicesSection = () => {
         <h3 className={styles.sectionTitle}>Our Services</h3>
         <div className={styles.serviceList}>
           <div className={styles.service}>
-            <img className={styles.serviceImage} src={standardCleanImage} alt="Standard Clean" />
+            <img className={styles.serviceImage} src={standardCleanImage} alt="Standard Cleaning Service" />
             <h4 className={styles.serviceTitle}>Standard Clean</h4>
             <ul className={styles.serviceTasks}>
               <li>Dusting surfaces</li>
@@ -23,7 +23,7 @@ const ServicesSection = () => {
             </ul>
           </div>
           <div className={styles.service}>
-            <img className={styles.serviceImage} src={deepCleanImage} alt="Deep Clean" />
+            <img className={styles.serviceImage} src={deepCleanImage} alt="Deep Cleaning Service" />
             <h4 className={styles.serviceTitle}>Deep Clean</h4>
             <ul className={styles.serviceTasks}>
               <li>All tasks in Standard Clean</li>
@@ -33,7 +33,7 @@ const ServicesSection = () => {
             </ul>
           </div>
           <div className={styles.service}>
-            <img className={styles.serviceImage} src={movingCleanImage} alt="Moving Clean" />
+            <img className={styles.serviceImage} src={movingCleanImage} alt="Moving Cleaning Service" />
             <h4 className={styles.serviceTitle}>Moving Clean</h4>
             <ul className={styles.serviceTasks}>
               <li>All tasks in Deep Clean</li>

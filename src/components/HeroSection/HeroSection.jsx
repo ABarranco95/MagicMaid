@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './HeroSection.module.css';
 import heroBackgroundImage from '../../assets/heroBackgroundImage.jpg';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
@@ -11,29 +12,22 @@ const HeroSection = () => {
       <div className={styles.overlay}></div>
       <div className={styles.content}>
         <h1 className={styles.heading}>
-          Home Sparkle Pros: 
+          Home Sparkle Pros 
         </h1>
         <h4 className={styles.subheading}>
-        Your Trusted Home Cleaning Pros
+          Your Trusted Home Cleaning Team
         </h4>
-        {/* <div className={styles.phoneNumbers}>
-          <span className={styles.phoneNumber}>Madera, CA: (559) 785-2857</span>
-          <span className={styles.phoneNumber}>Fresno, CA: (559) 785-2857</span>
-          <span className={styles.phoneNumber}>Clovis, CA: (559) 785-2857</span>
-          <span className={styles.phoneNumber}>Sacramento, CA: (279) 203-0447</span>
-          <span className={styles.phoneNumber}>Raleigh, NC: (984) 777-8308</span>
-        </div> */}
         <div className={styles.ctaContainer}>
-          <a
-            href="/booking-form"
-            className={styles.ctaButton}
-          >
-            Book Online Now
-          </a>
-          <a href="/quote-form" className={styles.ctaButtonAlt}>
-            Get a Free Quote
-          </a>
+          <Link to="/booking-form" className={styles.ctaButton}>
+            Book Online
+          </Link>
+          <Link to="/quote-form" className={styles.ctaButtonAlt}>
+            Get Quote
+          </Link>
         </div>
+        {/* <div className={styles.phoneNumbers}>
+          <span className={styles.phoneNumber}>Call us now: 559-785-2857</span>
+        </div> */}
       </div>
     </section>
   );

@@ -9,8 +9,8 @@ const CallToActionSection = () => {
         <a href="/booking-form" className={styles.ctaButton}>
           Book Now
         </a>
-        <a href="/quote-form" className={styles.ctaButton}>
-          Get a Quote
+        <a href="/quote-form" className={styles.ctaButtonAlt}>
+          Get Quote
         </a>
       </div>
     </div>

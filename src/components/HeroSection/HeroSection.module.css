@@ -9,7 +9,7 @@
 
 .hero {
   position: relative;
-  height: 100vh;
+  height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,9 +62,9 @@
 .ctaButton,
 .ctaButtonAlt {
   display: inline-block;
-  padding: 1rem 3rem;
+  padding: 0.8rem 2rem;
   border-radius: 5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -78,51 +78,51 @@
 }
 
 .ctaButton:hover {
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
   transform: scale(1.05);
 }
 
 .ctaButtonAlt {
-  background-color: var(--secondary-color);
+  background-color: #3ac267;
   color: var(--text-color);
   text-decoration: none;
 }
 
 .ctaButtonAlt:hover {
-  background-color: var(--primary-color);
-  transform: scale(1.05);
+  /* background-color: var(--primary-color); */
+  transform: scale(1.10);
 }
 
 @media screen and (max-width: 768px) {
-.hero {
-height: 100%;
-padding-top: 80px;
-}
+  .hero {
+    height: 60vh;  /* Change height to 60vh for smaller screens */
+    padding-top: 80px;
+  }
 
-.heading {
-font-size: 2.5rem;
-margin-bottom: 1rem;
-}
+  .heading {
+    font-size: 2rem;  /* Reduce font size to 2rem */
+    margin-bottom: 1rem;
+  }
 
-.subheading {
-font-size: 1.5rem;
-margin-bottom: 2rem;
-}
+  .subheading {
+    font-size: 1.3rem;  /* Reduce font size to 1.3rem */
+    margin-bottom: 2rem;
+  }
 
-.ctaButton,
-.ctaButtonAlt {
-padding: 0.8rem 2rem;
-font-size: 1rem;
+  .ctaButton,
+  .ctaButtonAlt {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
 }
-}
-
+/* 
 .phoneNumbers {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
-}
+} */
 
 .phoneNumber {
   background-color: rgba(255, 255, 255, 0.9);
@@ -132,10 +132,8 @@ font-size: 1rem;
   font-weight: 600;
 }
 
-@media screen and (max-width: 768px) {
-  .phoneNumbers {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
+.phoneNumbers {
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }

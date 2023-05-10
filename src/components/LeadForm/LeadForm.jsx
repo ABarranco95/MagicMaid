@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './LeadForm.module.css';
+import Footer from '../Footer/Footer';
 
 const LeadForm = () => {
   const iframeRef = useRef(null);
@@ -19,21 +20,35 @@ const LeadForm = () => {
       }
     };
 
+    const handleLoad = () => {
+      if (iframeRef.current) {
+        iframeRef.current.style.height = `${iframeRef.current.contentWindow.document.body.scrollHeight}px`;
+      }
+    };
+
     window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
+    iframeRef.current.addEventListener('load', handleLoad);
+    return () => {
+      window.removeEventListener('message', handleMessage);
+      if (iframeRef.current) {
+        iframeRef.current.removeEventListener('load', handleLoad);
+      }
+    };
   }, []);
 
   return (
     <div className={styles.leadForm}>
       <h2 className={styles.leadFormTitle}>Get a Free Quote</h2>
       <iframe
-        ref={iframeRef}
-        src="https://homesparklepros.bookingkoala.com/contact-us?embed=true"
-        style={{ border: 'none', height: '100vh' }}
-        width="100%"
-        scrolling="yes"
-      ></iframe>
+  ref={iframeRef}
+  src="https://homesparklepros.bookingkoala.com/contact-us?embed=true"
+  style={{ border: 'none', height: '1640px', overflow: 'hidden' }}
+  width="100%"
+  scrolling="no"
+  id="iFrameResizer0"
+></iframe>
       <script src="https://homesparklepros.bookingkoala.com/resources/embed.js" defer></script>
+    {/* <Footer /> */}
     </div>
   );
 };
