@@ -7,6 +7,7 @@ import LeadForm from './components/LeadForm/LeadForm';
 import Footer from './components/Footer/Footer';
 import BookingForm from './components/BookingForm/BookingForm';
 import GiftCards from './components/GiftCard/GiftCards';
+import { Box, ThemeProvider, createTheme } from '@mui/material';
 
 // Import the font
 import '@fontsource/roboto';
@@ -19,22 +20,46 @@ const App = () => {
   );
 };
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#57eb4a',
+    },
+    secondary: {
+      main: '#03588C',
+    },
+    background: {
+      default: '#ffffff',
+    },
+    text: {
+      primary: '#333333',
+    },
+    action: {
+      active: '#f2a154',
+    },
+  },
+});
+
 const AppContent = () => {
   const location = useLocation();
 
   return (
-    <div className="App" style={{ fontFamily: 'Roboto' }}>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/quote-form" element={<LeadForm />} />
-        <Route path="/booking-form" element={<BookingForm />} />
-        <Route path="/cleanings" element={<CleaningsPage />} />
-        <Route path="/gift-cards" element={<GiftCards />} />
-        <Route path="/lead-form" element={<LeadForm />} />
-      </Routes>
-      {location.pathname === '/' && <Footer />}
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App" style={{ fontFamily: 'Roboto' }}>
+        <Navbar />
+        <Box sx={{ mt: 0 }}></Box>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/quote-form" element={<LeadForm />} />
+          <Route path="/booking-form" element={<BookingForm />} />
+          <Route path="/cleanings" element={<CleaningsPage />} />
+          <Route path="/gift-cards" element={<GiftCards />} />
+          <Route path="/lead-form" element={<LeadForm />} />
+        </Routes>
+        <Footer />
+        {location.pathname === '/' && <Footer />}
+      </div>
+    </ThemeProvider>
   );
 };
 

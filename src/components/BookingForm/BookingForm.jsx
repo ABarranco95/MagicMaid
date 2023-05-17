@@ -1,26 +1,39 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from './BookingForm.module.css';
+import { Helmet } from 'react-helmet';
 import Select from 'react-select';
-import Footer from '../Footer/Footer';
+import { Box, Typography } from '@mui/material';
 
 const BookingForm = () => {
   const [selectedCity, setSelectedCity] = useState('');
-
   const iframeRef = useRef(null);
 
   const setIframeHeight = () => {
     if (window.innerWidth <= 600) {  // smaller screens
-      return '5900px';
+      return '5700px';
     } else if (window.innerWidth > 600 && window.innerWidth <= 805) {  // mobile
-      return '5600px';
+      return '4900px';
     } else if (window.innerWidth > 805 && window.innerWidth <= 1050) { // tablet
-      return '4700px';
+      return '4000px';
     } else {  // desktop
-      return '3940px';
+      return '3600px';
     }
 };
 
+const renderIframe = (src) => (
+  <iframe
+    title="Booking Form"
+    ref={iframeRef}
+    src={src}
+    style={{ border: 'none', height: setIframeHeight(), overflow: 'hidden' }}
+    width="100%"
+    scrolling="no"
+    id="iFrameResizer0"
+  ></iframe>
+);
 
+  const handleChange = (selectedOption) => {
+    setSelectedCity(selectedOption.value);
+  };
 
   useEffect(() => {
     const handleMessage = (event) => {
@@ -32,91 +45,22 @@ const BookingForm = () => {
     window.addEventListener('message', handleMessage);
 
     return () => window.removeEventListener('message', handleMessage);
-  }, []);
-
-  const handleCityChange = (event) => {
-    setSelectedCity(event.target.value);
-  };
-
-  const renderIframe = (src) => (
-    <iframe
-      title="Booking Form"
-      ref={iframeRef}
-      src={src}
-      style={{ border: 'none', height: setIframeHeight(), overflow: 'hidden' }}
-      width="100%"
-      scrolling="no"
-      id="iFrameResizer0"
-    ></iframe>
-  );
-
- 
-  const options = [
-    { value: 'Madera', label: 'Madera, CA' },
-    { value: 'Fresno', label: 'Fresno, CA' },
-    { value: 'Clovis', label: 'Clovis, CA' },
-    { value: 'Raleigh', label: 'Raleigh, NC' },
-  ];
-
-  const customStyles = {
-    control: (provided) => ({
-      ...provided,
-      border: 'none',
-      borderBottom: '2px solid #333', // Change the color and thickness as per your preference
-      borderRadius: '0',
-      boxShadow: 'none',
-      '&:hover': {
-        border: 'none',
-        borderBottom: '2px solid #333',
-      },
-    }),
-  option: (provided, state) => ({
-    ...provided,
-    color: state.isSelected ? 'white' : 'black',
-    backgroundColor: state.isSelected ? '#007bff' : 'white',
-    padding: 10,
-  }),
-  input: (provided) => ({
-    ...provided,
-    outline: 'none',
-  }),
-};
-
-
-  const handleChange = (selectedOption) => {
-    setSelectedCity(selectedOption.value);
-  };
+  }, [renderIframe]);
 
   return (
-    <div className={selectedCity ? styles.bookingForm : styles.bookingFormNoCity}>
-      {!selectedCity ? (
-        <>
-          <header>
-            <h1 className={styles.headerTitle}>Book a Cleaning in Your City</h1>
-            <p className={styles.headerSubtitle}>Choose your city and we'll take care of the rest.</p>
-          </header>
-          <section className={styles.dropdownContainer}>
-            <label htmlFor="city" className={styles.dropdownLabel}>Select your city:</label>
-            <Select
-              id="city"
-              options={options}
-              styles={customStyles}
-              onChange={handleChange}
-            />
-          </section>
-        </>
-      ) : (
-        // Render the iframe only when a city is selected
-        <>
-          {selectedCity === 'Raleigh'
-            ? renderIframe("https://homesparklepros.bookingkoala.com/booknow/raleigh-house-cleaning?embed=true&bar=false")
-            : renderIframe("https://homesparklepros.bookingkoala.com/booknow/home_cleaning?embed=true&bar=false")}
-          {/* <Footer /> */}
-        </>
-      )}
-      <script src="https://homesparklepros.bookingkoala.com/resources/embed.js" defer></script>
-    </div>
+    <Box sx={{ mt: 10 }}>
+      <Helmet>
+        <title>Book Professional House Cleaning Services in Fresno, Madera, and Clovis, CA</title>
+        <meta name="description" content="Schedule your house cleaning with HomeSparkle Pros today! Trusted, local cleaning experts in Fresno, Madera, and Clovis, CA. Get your free quote now!" />
+      </Helmet>
+      <Typography variant="h4">Book Professional House Cleaning Services in Fresno, Madera, and Clovis, CA</Typography>
+      <Typography variant="h7">Choose your city and we'll take care of the rest.</Typography>
+      {
+        renderIframe("https://homesparklepros.bookingkoala.com/booknow/home_cleaning?embed=true&bar=false")
+      }
+      
+    </Box>
   );
 };
 
-export default BookingForm
+export default BookingForm;

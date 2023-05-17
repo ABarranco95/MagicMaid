@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import styles from './LeadForm.module.css';
-import Footer from '../Footer/Footer';
+import { Box, Typography } from '@mui/material';
+
 
 const LeadForm = () => {
   const iframeRef = useRef(null);
@@ -37,19 +37,19 @@ const LeadForm = () => {
   }, []);
 
   return (
-    <div className={styles.leadForm}>
-      <h2 className={styles.leadFormTitle}>Get a Free Quote</h2>
-      <iframe
-  ref={iframeRef}
-  src="https://homesparklepros.bookingkoala.com/contact-us?embed=true"
-  style={{ border: 'none', height: '1640px', overflow: 'hidden' }}
-  width="100%"
-  scrolling="no"
-  id="iFrameResizer0"
-></iframe>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Typography variant="h6" sx={{ marginBottom: 2 }}>Get a Free Quote</Typography>
+      <Box
+        component="iframe"
+        ref={iframeRef}
+        src="https://homesparklepros.bookingkoala.com/contact-us?embed=true"
+        sx={{ border: 'none', height: '1640px', overflow: 'hidden', width: '100%' }}
+        scrolling="no"
+        id="iFrameResizer0"
+      />
       <script src="https://homesparklepros.bookingkoala.com/resources/embed.js" defer></script>
-    {/* <Footer /> */}
-    </div>
+
+    </Box>
   );
 };
 
