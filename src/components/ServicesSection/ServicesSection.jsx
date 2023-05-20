@@ -59,11 +59,11 @@ const styles = {
     color: 'black',
     alignSelf: 'flex-end',
   },
-  listItemText: {
-    '& a': {
-      textDecoration: 'none',
-    },
-  },
+  
+};
+const titleStyles = {
+  textAlign: 'center',
+  margin: 20,
 };
 
 const ServicesSection = () => {
@@ -108,13 +108,12 @@ const ServicesSection = () => {
       <title>Top-Rated Professional House Cleaning Services | Home Sparkle Pros</title>
         <meta name="description" content="Discover our range of top-rated professional cleaning services including standard, deep, and moving clean. Each service is tailored to your needs for homes in Fresno, Madera, and Clovis. Experience a sparkly clean home with Home Sparkle Pros." />
       </Helmet>
-      <Typography variant="h4" sx={styles.title}>Our Services</Typography>
+      <Typography variant="h4" style={titleStyles}>Our Services</Typography>
       <Grid container spacing={3}>
         {services.map((service) => (
           <Grid item xs={12} sm={6} md={4} lg={4} key={service.name}>
             <Card sx={styles.card}>
-            <Link to={service.path} sx={{ textDecoration: 'none', color: 'inherit' }}>
-
+              <Link to={service.path} sx={styles.link}>
                 <CardMedia component="img" image={service.image} alt={`${service.name} - Home Sparkle Pros`} sx={styles.media} />
                 <CardContent sx={styles.cardContent}>
                   <Typography variant="h5" sx={styles.serviceType}>{service.name}</Typography>
@@ -122,9 +121,7 @@ const ServicesSection = () => {
                     {service.tasks.map((task, index) => (
                       <ListItem key={index}>
                         {task.icon}
-                        <ListItemText primary={task.description} sx={{ textDecoration: 'none !important' }} />
-
-
+                        <ListItemText primary={task.description} />
                       </ListItem>
                     ))}
                   </List>
