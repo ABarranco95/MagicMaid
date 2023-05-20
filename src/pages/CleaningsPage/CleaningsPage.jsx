@@ -1,6 +1,4 @@
 import React from 'react';
-
-import Footer from '../../components/Footer/Footer';
 import ServicesSection from '../../components/ServicesSection/ServicesSection';
 
 const CleaningsPage = () => {
@@ -8,7 +6,7 @@ const CleaningsPage = () => {
     <div>
       
       <ServicesSection />
-      <Footer />
+
     </div>
   );
 };

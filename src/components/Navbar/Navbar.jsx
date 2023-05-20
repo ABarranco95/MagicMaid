@@ -12,14 +12,13 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import logo from '../../assets/logo.svg'
 const drawerWidth = 240;
-const navItems = ['Services', 'About Us', 'Testimonials', 'Blog', 'Contact Us'];
+const navItems = ['Services', 'Contact Us'];
 
 const Navbar = (props) => {
   const { window } = props;
@@ -33,7 +32,11 @@ const Navbar = (props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <img src={logo} alt="Company Logo" style={{ flexGrow: 1, textAlign: matches ? 'right' : 'center', height: '65px', width: 'auto', objectFit: 'contain' }} />
+      <Box sx={{ display: 'flex', justifyContent: 'center', py: 1 }}>
+        <Link to="/">
+          <img src={logo} alt="Company Logo" style={{ height: '65px', width: 'auto', objectFit: 'contain' }} />
+        </Link>
+      </Box>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -54,42 +57,37 @@ const Navbar = (props) => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" position="sticky" color="default" sx={{ backgroundColor: theme.palette.background.default }}>
-        <Toolbar>
-          {!matches && (
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { xs: 'block', md: 'none' } }}
-            >
-              <MenuIcon />
-            </IconButton>
-          )}
-          {/* <Typography
-    variant="h6"
-    component="div"
-    sx={{ flexGrow: 1, textAlign: matches ? 'right' : 'center', color: theme.palette.text.primary }}
->
-    Home Sparkle Pros
-</Typography> */}
-
-<img src={logo} alt="Company Logo" style={{ flexGrow: 1, textAlign: matches ? 'right' : 'center', height: '65px', width: 'auto', objectFit: 'contain' }} />
-
-
-          {matches && (
-            <Box sx={{ display: 'flex', flexGrow: 1 }}>
-              {navItems.map((item) => (
-                <Button key={item} sx={{ color: theme.palette.text.primary, mr: 2 }}>
+      <AppBar component="nav" position="sticky" color="default" sx={{ backgroundColor: theme.palette.background.default, paddingBottom: 2 }}>
+        <Toolbar sx={{ position: 'relative' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            {!matches && (
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { xs: 'block', md: 'none' } }}
+              >
+                <MenuIcon />
+              </IconButton>
+            )}
+            {matches && (
+              <Box sx={{ display: 'flex', flexDirection: 'row', flexGrow: 1 }}>
+                {navItems.map((item) => (
                   <Link to={`/${item.toLowerCase().replace(' ', '-')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    {item}
+                    <Button key={item} sx={{ color: theme.palette.text.primary, mr: 2 }}>
+                      {item}
+                    </Button>
                   </Link>
-                </Button>
-              ))}
-            </Box>
-          )}
-          
+                ))}
+              </Box>
+            )}
+          </Box>
+          <Box sx={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+            <Link to="/">
+              <img src={logo} alt="Company Logo" style={{ height: '65px', width: 'auto', objectFit: 'contain' }} />
+            </Link>
+          </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav">
@@ -101,7 +99,8 @@ const Navbar = (props) => {
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
-          sx={{display: { xs: 'block', md: 'none' },
+          sx={{
+            display: { xs: 'block', md: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
@@ -110,6 +109,7 @@ const Navbar = (props) => {
       </Box>
     </Box>
   );
+  
 }
 
 Navbar.propTypes = {
@@ -117,4 +117,3 @@ Navbar.propTypes = {
 };
 
 export default Navbar;
-           

@@ -1,33 +1,61 @@
 import React from 'react';
-import styles from './MovingCleanPage.module.css';
-import movingCleanImage from '../../../assets/Moving.jpg';
-import Footer from '../../../components/Footer/Footer';
+import { Typography, Paper, List, ListItem, ListItemText } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import movingCleanImage from "../../../assets/Deep.jpg"
 
 const MovingCleanPage = () => {
+  const styles = {
+    pageContainer: { padding: '20px' },
+    pageTitle: { textAlign: 'center', marginBottom: '20px' },
+    pageImage: { width: '100%', objectFit: 'cover' },
+    description: { marginTop: '20px', lineHeight: '1.5' },
+  };
+
   return (
-    <>
-     <div className={styles.movingClean}>
-      <div className={styles.container}>
-        <h1 className={styles.pageTitle}>Moving Cleaning</h1>
-        <div className={styles.pageContent}>
-          <img src={movingCleanImage} alt="Moving Cleaning" className={styles.pageImage} />
-          <p className={styles.introText}>Moving can be a stressful and overwhelming experience, but at Your Company Name, we're here to help make the process easier. Our Moving Clean service ensures that your home is left spotless and ready for the next residents. We'll take care of the cleaning so you can focus on settling into your new space.</p>
-          <h2 className={styles.serviceTitle}>What's included in our Moving Clean service?</h2>
-          <ul className={styles.serviceList}>
-            <li>Dusting and wiping all surfaces, including furniture, countertops, and shelves</li>
-            <li>Cleaning and sanitizing bathrooms, including toilets, sinks, and showers or tubs</li>
-            <li>Vacuuming and/or sweeping and mopping all floors, including carpets, rugs, and hardwood floors</li>
-            <li>Cleaning kitchen appliances and surfaces, including stovetops, ovens, microwaves, and refrigerators</li>
-            <li>Removing trash and recycling</li>
-            <li>And more!</li>
-          </ul>
-          <p className={styles.outroText}>We use high-quality cleaning products and equipment to ensure that your space is left sparkling clean and fresh. Our team of experienced and highly trained cleaners is dedicated to providing the highest level of customer service and satisfaction.</p>
-          <p className={styles.contactText}>Contact us today to schedule your Moving Clean service and experience the difference of working with a professional and reliable cleaning company in Fresno, Madera, and Clovis.</p>
-        </div>
-      </div>
+    <div style={styles.pageContainer}>
+      <Typography variant="h2" style={styles.pageTitle}>
+        Moving Cleaning Service in Fresno, Clovis, Madera, CA
+      </Typography>
+      <img src={movingCleanImage} alt="Moving Cleaning Service" style={styles.pageImage} />
+      <Typography variant="body1" style={styles.description}>
+        Home Sparkle Pros provides a comprehensive moving cleaning service for those transitioning into or out of a home. Our service includes all tasks in the Deep Clean, plus cleaning inside cabinets and closets, wall cleaning, and garage cleaning.
+      </Typography>
+      <Typography variant="h4" style={{ ...styles.pageTitle, ...{ fontSize: '1.6rem', marginTop: '30px' } }}>
+        Our Moving Cleaning Includes:
+      </Typography>
+      <Paper style={{ marginTop: '20px' }}>
+        <List>
+          <ListItem>
+            <HomeIcon />
+            <ListItemText primary="All tasks in Deep Clean" />
+          </ListItem>
+          <ListItem>
+            <HomeIcon />
+            <ListItemText primary="Cleaning inside cabinets and closets" />
+          </ListItem>
+          <ListItem>
+            <HomeIcon />
+            <ListItemText primary="Wall cleaning" />
+          </ListItem>
+          <ListItem>
+            <HomeIcon />
+            <ListItemText primary="Garage cleaning" />
+          </ListItem>
+        </List>
+      </Paper>
+      <Typography variant="h4" style={{ ...styles.pageTitle, ...{ fontSize: '1.6rem', marginTop: '30px' } }}>
+        Making Your Move Easier
+      </Typography>
+      <Typography variant="body1" style={styles.description}>
+        We understand that moving can be stressful. Our goal is to make the transition easier by providing a thorough cleaning of your home. Let us handle the cleaning so you can focus on settling into your new space.
+      </Typography>
+      <Typography variant="h4" style={{ ...styles.pageTitle, ...{ fontSize: '1.6rem', marginTop: '30px' } }}>
+        Contact Us Today for a Moving Clean
+      </Typography>
+      <Typography variant="body1" style={styles.description}>
+        Ready to make your move smoother with our moving clean service? Get in touch with us today at 559-785-2857 or email us at homesparklepros@gmail.com. We are ready to serve you in Fresno, Clovis, and Madera, CA.
+      </Typography>
     </div>
-    <Footer />
-    </>
   );
 };
 

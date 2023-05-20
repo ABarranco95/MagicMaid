@@ -1,36 +1,71 @@
 import React from 'react';
-import styles from './DeepCleanPage.module.css';
-import deepCleanImage from '../../../assets/Deep.jpg';
-import Footer from '../../../components/Footer/Footer';
+import { Typography, Paper, List, ListItem, ListItemText } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import deepCleanImage from "../../../assets/Deep.jpg"
 
 const DeepCleanPage = () => {
-  return (
-    <>
+  const styles = {
+    pageContainer: { padding: '20px' },
+    pageTitle: { textAlign: 'center', marginBottom: '20px' },
+    pageImage: { width: '100%', objectFit: 'cover' },
+    description: { marginTop: '20px', lineHeight: '1.5' },
+  };
 
-    
-    <div className={styles.deepClean}>
-      <div className={styles.container}>
-        <h1 className={styles.pageTitle}>Deep Cleaning</h1>
-        <div className={styles.pageContent}>
-          <img src={deepCleanImage} alt="Deep Cleaning" className={styles.pageImage} />
-          <p className={styles.introText}>Our Deep Clean service is perfect for those who want a thorough cleaning of their home. We'll take care of every nook and cranny, making sure your space is left sparkling clean and fresh. Whether you're looking to do a seasonal clean or just need a little extra help getting your home in top shape, our team of experts is here to help.</p>
-          <h2 className={styles.serviceTitle}>What's included in our Deep Clean service?</h2>
-          <ul className={styles.serviceList}>
-            <li>Dusting and wiping all surfaces, including furniture, countertops, and shelves</li>
-            <li>Cleaning and sanitizing bathrooms, including toilets, sinks, and showers or tubs</li>
-            <li>Vacuuming and/or sweeping and mopping all floors, including carpets, rugs, and hardwood floors</li>
-            <li>Cleaning kitchen appliances and surfaces, including stovetops, ovens, microwaves, and refrigerators</li>
-            <li>Washing interior windows and mirrors</li>
-            <li>And more!</li>
-          </ul>
-          <p className={styles.outroText}>We use high-quality cleaning products and equipment to ensure that your space is left sparkling clean and fresh. Our team of experienced and highly trained cleaners is dedicated to providing the highest level of customer service and satisfaction.</p>
-          <p className={styles.contactText}>Contact us today to schedule your Deep Clean service and experience the difference of working with a professional and reliable cleaning company in Fresno, Madera, and Clovis.</p>
-        </div>
-      </div>
+  return (
+    <div style={styles.pageContainer}>
+      <Typography variant="h2" style={styles.pageTitle}>
+        Deep Cleaning Service in Fresno, Clovis, Madera, CA
+      </Typography>
+      <img src={deepCleanImage} alt="Deep Cleaning Service" style={styles.pageImage} />
+      <Typography variant="body1" style={styles.description}>
+        Home Sparkle Pros specializes in providing deep cleaning services for those who require an extra level of care. Our service includes all tasks in the standard clean plus deep cleaning appliances, interior window cleaning, and attention to baseboards and door frames.
+      </Typography>
+      <Typography variant="h4" style={{ ...styles.pageTitle, ...{ fontSize: '1.6rem', marginTop: '30px' } }}>
+        Our Deep Cleaning Includes:
+      </Typography>
+      <Paper style={{ marginTop: '20px' }}>
+        <List>
+          <ListItem>
+            <HomeIcon />
+            <ListItemText primary="All tasks in Standard Clean" />
+          </ListItem>
+          <ListItem>
+            <HomeIcon />
+            <ListItemText primary="Deep cleaning appliances" />
+          </ListItem>
+          <ListItem>
+            <HomeIcon />
+            <ListItemText primary="Interior window cleaning" />
+          </ListItem>
+          <ListItem>
+            <HomeIcon />
+            <ListItemText primary="Baseboards and door frames" />
+          </ListItem>
+        </List>
+      </Paper>
+      <Typography variant="h4" style={{ ...styles.pageTitle, ...{ fontSize: '1.6rem', marginTop: '30px' } }}>
+        Why Our Deep Cleaning Service Stands Out
+      </Typography>
+      <Typography variant="body1" style={styles.description}>
+        Our team at Home Sparkle Pros is meticulously trained to handle a deep clean. We use the latest cleaning techniques and eco-friendly solutions to ensure your home not only looks clean but feels deeply refreshed. We go the extra mile, so you don't have to.
+      </Typography>
+      <Typography variant="h4" style={{ ...styles.pageTitle, ...{ fontSize: '1.6rem', marginTop: '30px' } }}>
+        What Our Clients Say
+      </Typography>
+      <Paper style={{ padding: '20px', marginTop: '20px' }}>
+        <Typography variant="body1" style={styles.description}>
+          "The deep cleaning service from Home Sparkle Pros is second to none. They were extremely thorough and left no stone unturned. My home feels brand new!" - John Smith, Clovis, CA
+        </Typography>
+      </Paper>
+      <Typography variant="h4" style={{ ...styles.pageTitle, ...{ fontSize: '1.6rem', marginTop: '30px' } }}>
+        Contact Us Today for a Deep Clean
+      </Typography>
+      <Typography variant="body1" style={styles.description}>
+        Ready for a deep clean? Get in touch with us today at 559-785-2857 or email us at homesparklepros@gmail.com. Our professional cleaning team is ready to serve you in Fresno, Clovis, and Madera, CA.
+      </Typography>
     </div>
-    <Footer />
-    </>
   );
 };
 
 export default DeepCleanPage;
+

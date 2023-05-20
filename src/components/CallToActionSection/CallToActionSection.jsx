@@ -1,19 +1,31 @@
 import React from 'react';
-import styles from './CallToActionSection.module.css';
+import { Button, Typography, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const CallToActionSection = () => {
   return (
-    <div className={`${styles.callToAction} testimonialCard`}>
-      <h4 className={styles.sectionTitle}>Ready for a Sparkling Clean Home?</h4>
-      <div className={styles.buttonsContainer}>
-        <a href="/booking-form" className={styles.ctaButton}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 10,
+        backgroundColor: '#fff',
+      }}
+    >
+      <Typography variant="h4" component="h2" gutterBottom>
+        Ready for a Sparkling Clean Home in Fresno, Madera, and Clovis, CA?
+      </Typography>
+      <Box sx={{ mt: 2 }}>
+        <Button variant="contained" component={Link} to="/booking-form" sx={{ mr: 1 }}>
           Book Now
-        </a>
-        <a href="/quote-form" className={styles.ctaButtonAlt}>
-          Get Quote
-        </a>
-      </div>
-    </div>
+        </Button>
+        <Button variant="outlined" component={Link} to="/quote-form" sx={{ borderColor: '#000', color: '#000' }}>
+          Get a Quote
+        </Button>
+      </Box>
+    </Box>
   );
 };
 
