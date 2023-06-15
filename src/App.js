@@ -11,16 +11,25 @@ import GiftCards from './components/GiftCard/GiftCards';
 import StandardCleanPage from './pages/CleaningsPage/StandardCleanPage/StandardCleanPage';
 import DeepCleanPage from './pages/CleaningsPage/DeepCleanPage/DeepCleanPage';
 import MovingCleanPage from './pages/CleaningsPage/MovingCleanPage/MovingCleanPage';
-import { Box, ThemeProvider, createTheme } from '@mui/material';
+import { Box, Container, ThemeProvider, createTheme } from '@mui/material';
+import { styled } from '@mui/system';
+import { CssBaseline } from '@mui/material';
 
 // Import the font
-import '@fontsource/roboto';
+import '@fontsource/poppins';
 import ServicesSection from './components/ServicesSection/ServicesSection';
 import TestimonialsSection from './components/TestimonialsSection/TestimonialsSection';
+
+const GlobalStyle = styled('body')({
+  margin: 0,
+  padding: 0,
+});
 
 const App = () => {
   return (
     <Router>
+      <CssBaseline />
+      <GlobalStyle />
       <AppContent />
     </Router>
   );
@@ -29,20 +38,25 @@ const App = () => {
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#57eb4a',
+      main: '#165085',
     },
     secondary: {
-      main: '#03588C',
+      main: '#f95370',
     },
     background: {
       default: '#ffffff',
+      paper: '#eff0ee',
     },
     text: {
-      primary: '#333333',
+      primary: '#000000',
+      secondary: '#f95370',
     },
     action: {
-      active: '#f2a154',
+      active: '#003d75',
     },
+  },
+  typography: {
+    fontFamily: 'Poppins, sans-serif',
   },
 });
 
@@ -51,9 +65,10 @@ const AppContent = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App" style={{ fontFamily: 'Roboto' }}>
+      <div className="App">
+      <Container disableGutters maxWidth='xlg'>
         <Navbar />
-        <Box sx={{ mt: 0 }}></Box>
+        <Box sx={{ mt: 0,  }}></Box>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/get-a-free-quote" element={<LeadForm />} />
@@ -68,9 +83,11 @@ const AppContent = () => {
           <Route path="/gift-cards" element={<GiftCards />} />
         </Routes>
         <Footer />
+        </Container>
       </div>
     </ThemeProvider>
   );
 };
+
 
 export default App;

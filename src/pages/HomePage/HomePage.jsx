@@ -17,7 +17,7 @@ const HomePage = () => {
       <ServicesSection />
       <LeadForm />
       <TestimonialsSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
 
     </div>
 

@@ -16,9 +16,13 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.svg';
+import { Typography } from '@mui/material';
+import { Container } from '@mui/material';
+
 const drawerWidth = 240;
-const navItems = ['Services', 'Contact Us'];
+
+const navItems = ['Home', 'About', 'Residential Cleaning', 'Areas Served', 'Cleaning Checklist', 'Contact'];
 
 const Navbar = (props) => {
   const { window } = props;
@@ -31,7 +35,7 @@ const Navbar = (props) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor: '#165085', color: '#fff' }}>
       <Box sx={{ display: 'flex', justifyContent: 'center', py: 1 }}>
         <Link to="/">
           <img src={logo} alt="Company Logo" style={{ height: '65px', width: 'auto', objectFit: 'contain' }} />
@@ -39,8 +43,8 @@ const Navbar = (props) => {
       </Box>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map((item, index) => (
+          <ListItem key={index} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
               <Link to={`/${item.toLowerCase().replace(' ', '-')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <ListItemText primary={item} />
@@ -55,65 +59,102 @@ const Navbar = (props) => {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar component="nav" position="sticky" color="default" sx={{ backgroundColor: theme.palette.background.default, paddingBottom: 2 }}>
-        <Toolbar sx={{ position: 'relative' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {!matches && (
-              <IconButton
+    <Box sx={{ 
+      display: 'flex', 
+      flexDirection: { xs: 'column-reverse', md: 'column' },
+      '& .MuiAppBar-root': {
+        marginBottom: { xs: 0, md: 0 },
+      },
+    }}>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar position="static" sx={{ backgroundColor: '#fff', pb: 0, color: '#fff', boxShadow: 'none',  }}>
+          <Toolbar sx={{ 
+            backgroundColor: '#fff', 
+            display: 'flex', 
+            justifyContent: { xs: 'center', md: 'space-between' },
+            '& .logo': {
+              marginBottom: { xs: 0, md: 0 },
+            }
+          }}>
+            <Link to="/" className="logo">
+              <img src={logo} alt="Company Logo" style={{ height: '120px', width: 'auto', objectFit: 'contain' }} />
+            </Link>
+            <Button             
+              variant="outlined" 
+              sx={{ 
+                borderRadius: 28, 
+                borderColor:                 'red', 
+                color: 'red', 
+                textTransform: 'none', 
+                minWidth: 200, 
+                height: 60,
+                py: 1, 
+                display: { xs: 'none', md: 'block' },
+                '&:hover': {
+                  backgroundColor: 'red',
+                  color: '#fff',
+                }
+              }}
+            >
+              Book Now
+            </Button>
+          </Toolbar>
+        </AppBar>
+      </Box>
+    
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar position="static" sx={{ backgroundColor: '#165085', pb: 2, color: '#fff', boxShadow: 'none' }}>
+        <Container>
+          <Toolbar>
+            <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+            <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 edge="start"
                 onClick={handleDrawerToggle}
                 sx={{ mr: 2, display: { xs: 'block', md: 'none' } }}
               >
-                <MenuIcon />
+                <MenuIcon sx={{ color: mobileOpen ? theme.palette.secondary.main : '#fff' }} />
               </IconButton>
-            )}
-            {matches && (
-              <Box sx={{ display: 'flex', flexDirection: 'row', flexGrow: 1 }}>
-                {navItems.map((item) => (
-                  <Link to={`/${item.toLowerCase().replace(' ', '-')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <Button key={item} sx={{ color: theme.palette.text.primary, mr: 2 }}>
-                      {item}
-                    </Button>
+              <Typography variant="button" component="div" sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' }, textAlign: 'center', fontSize: '1.2em', marginX: '0.5em' }}>
+                {navItems.map((item, index) => (
+                  <Link key={index} to={`/${item.toLowerCase().replace(' ', '-')}`} style={{ color: '#fff', textDecoration: 'none' }}>
+                    {item}{index !== navItems.length - 1 && ' | '}
                   </Link>
                 ))}
-              </Box>
-            )}
-          </Box>
-          <Box sx={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
-            <Link to="/">
-              <img src={logo} alt="Company Logo" style={{ height: '65px', width: 'auto', objectFit: 'contain' }} />
-            </Link>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Box component="nav">
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
+              </Typography>
+            </Box>
+          </Toolbar>
+          </Container>
+        </AppBar>
+        <Box component="nav">
+          <Drawer
+            container={container}
+            variant="temporary"
+            anchor={'right'}
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: 'block', md: 'none' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Box>
       </Box>
     </Box>
   );
-  
-}
+};
 
 Navbar.propTypes = {
   window: PropTypes.func,
 };
 
 export default Navbar;
+
