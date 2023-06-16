@@ -56,11 +56,7 @@ const LeadForm = () => {
         <title>Lead Form</title>
         <meta name="description" content="Submit your information to become a lead." />
       </Helmet>
-      <Box sx={{ textAlign: 'center', marginTop: 10, marginLeft: 5,
-      marginRight: 5 }}>
-        <Typography variant="h5" >Become a Lead</Typography>
-        <Typography variant="body1" sx={{ marginTop: 5 }}>Submit your information below to become a lead.</Typography>
-      </Box>
+      
       <iframe
         id="JotFormIFrame-231657184518058"
         title="Allow Us To Give You Back Your Time! Tell Us How We Can Help!"
