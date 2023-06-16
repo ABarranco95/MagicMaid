@@ -1,211 +1,79 @@
-import React, { useState } from 'react';
-import { useFormik } from 'formik';
-import { Button, TextField, Box, Typography, Grid, FormControl, Select, MenuItem, InputLabel } from '@mui/material';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { Box, Typography } from '@mui/material';
 
 const LeadForm = () => {
-  const [status, setStatus] = useState('');
 
-  const formik = useFormik({
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      address: '',
-      type_of_service_needed: '',
-      how_many_bedrooms: '',
-      how_many_bathrooms: '',
-      sq_ft: '',
-      any_extras_needed: '',
-    },
-    onSubmit: (values) => {
-      axios
-        .post('https://hooks.zapier.com/hooks/catch/15294445/3hzibvg/', values)
-        .then((response) => {
-          console.log(response);
-          setStatus('Your form has been submitted successfully!');
-          formik.resetForm();
-        })
-        .catch((error) => {
-          console.error(error);
-          setStatus('An error occurred. Please try again.');
-        });
-    },
-  });
+  useEffect(() => {
+    let iframe = document.getElementById("JotFormIFrame-231657184518058");
+    if (iframe) {
+      var src = iframe.src;
+      var iframeParams = [];
+      if (window.location.href && window.location.href.indexOf("?") > -1) {
+        iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+      }
+      if (src && src.indexOf("?") > -1) {
+        iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+        src = src.substr(0, src.indexOf("?"))
+      }
+      iframeParams.push("isIframeEmbed=1");
+      iframe.src = src + "?" + iframeParams.join('&');
+    }
 
-  const bedrooms = Array.from({ length: 10 }, (_, i) => i + 1);
-  const bathrooms = Array.from({ length: 11 }, (_, i) => (i / 2).toFixed(1));
-  const sqftOptions = Array.from({ length: 11 }, (_, i) => (i * 500) + (i === 10 ? '+' : ''));
+    const handleIFrameMessage = (e) => {
+      if (typeof e.data === 'object') { return; }
+      var args = e.data.split(":");
+      if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+      if (!iframe) { return; }
+      switch (args[0]) {
+        case "scrollIntoView":
+          iframe.scrollIntoView();
+          break;
+        case "setHeight":
+          iframe.style.height = args[1] + "px";
+          break;
+        case "collapseErrorPage":
+          if (iframe.clientHeight > window.innerHeight) {
+            iframe.style.height = window.innerHeight + "px";
+          }
+          break;
+        case "reloadPage":
+          window.location.reload();
+          break;
+      }
+    };
+  
+    window.addEventListener('message', handleIFrameMessage);
+  
+    return () => {
+      window.removeEventListener('message', handleIFrameMessage);
+    };
+  }, []);
 
   return (
-    <Grid container justifyContent="center">
-
-    
-    <Box component="form" onSubmit={formik.handleSubmit} sx={{ mt: 5, maxWidth: '1100px', margin: '10 auto', mx: 5 }}>
-      <Typography variant="h4" gutterBottom>
-        Allow Us To Give You Back Your Time!
-        Tell Us How We Can Help!
-      </Typography>
-      {status && <Typography variant="h6" gutterBottom>{status}</Typography>}
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            fullWidth
-            id="firstName"
-            name="firstName"
-            label="First Name"
-            value={formik.values.firstName}
-            onChange={formik.handleChange}
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            fullWidth
-            id="lastName"
-            name="lastName"
-            label="Last Name"
-            value={formik.values.lastName}
-            onChange={formik.handleChange}
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            fullWidth
-            id="email"
-            name="email"
-            label="Email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            fullWidth
-            id="phone"
-            name="phone"
-            label="Phone"
-            value={formik.values.phone}
-            onChange={formik.handleChange}
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            required
-            fullWidth
-            id="address"
-            name="address"
-            label="Address"
-            value={formik.values.address}
-            onChange={formik.handleChange}
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <FormControl fullWidth variant="outlined">
-            <InputLabel required id="type_of_service_needed-label">What are you looking for?</InputLabel>
-            <Select
-              labelId="type_of_service_needed-label"
-              id="type_of_service_needed"
-              name="type_of_service_needed"
-              value={formik.values.type_of_service_needed}
-              onChange={formik.handleChange}
-              label="What are you looking for?"
-            >
-              <MenuItem value="Standard Home Cleaning">Standard Home Cleaning</MenuItem>
-              <MenuItem value="Deep Home Cleaning">Deep Home Cleaning</MenuItem>
-              <MenuItem value="Move In/Out Cleaning">Move In/Out Cleaning</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <FormControl fullWidth variant="outlined">
-            <InputLabel required id="how_many_bedrooms-label">How Many Bedrooms / Offices / Dens</InputLabel>
-            <Select
-              labelId="how_many_bedrooms-label"
-              id="how_many_bedrooms"
-              name="how_many_bedrooms"
-              value={formik.values.how_many_bedrooms}
-              onChange={formik.handleChange}
-              label="How Many Bedrooms / Offices / Dens"
-            >
-              {bedrooms.map((value) => (
-                <MenuItem key={value} value={value}>{value}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <FormControl fullWidth variant="outlined">
-            <InputLabel required id="how_many_bathrooms-label">How Many Bathrooms</InputLabel>
-            <Select
-              labelId="how_many_bathrooms-label"
-              id="how_many_bathrooms"
-              name="how_many_bathrooms"
-              value={formik.values.how_many_bathrooms}
-              onChange={formik.handleChange}
-              label="How Many Bathrooms"
-            >
-              {bathrooms.map((value) => (
-                <MenuItem key={value} value={value}>{value}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <FormControl fullWidth variant="outlined">
-            <InputLabel required id="sq_ft-label">Estimated SQ Footage</InputLabel>
-            <Select
-              labelId="sq_ft-label"
-              id="sq_ft"
-              name="sq_ft"
-              value={formik.values.sq_ft}
-              onChange={formik.handleChange}
-              label="Estimated SQ Footage"
-            >
-              {sqftOptions.map((value) => (
-                <MenuItem key={value} value={value}>{value} sq ft</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth
-            id="any_extras_needed"
-            name="any_extras_needed"
-            label="Anything you wish to share or feel like we need to know about the property?"
-            value={formik.values.any_extras_needed}
-            onChange={formik.handleChange}
-            variant="outlined"
-            multiline
-  rows={4}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <Button
-            fullWidth
-            variant="contained"
-            color="secondary"
-            type="submit"
-            sx={{ textTransform: 'none', borderRadius: 28, py: 1, mt: 5, height: 55, fontSize: '16px' }}
-          >
-            GET A QUOTE
-          </Button>
-        </Grid>
-      </Grid>
+    <Box sx={{ mt: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '0 auto', width: '80%' }}>
+      <Helmet>
+        <title>Lead Form</title>
+        <meta name="description" content="Submit your information to become a lead." />
+      </Helmet>
+      <Box sx={{ textAlign: 'center', marginTop: 10, marginLeft: 5,
+      marginRight: 5 }}>
+        <Typography variant="h5" >Become a Lead</Typography>
+        <Typography variant="body1" sx={{ marginTop: 5 }}>Submit your information below to become a lead.</Typography>
+      </Box>
+      <iframe
+        id="JotFormIFrame-231657184518058"
+        title="Allow Us To Give You Back Your Time! Tell Us How We Can Help!"
+        allowtransparency="true"
+        allowfullscreen="true"
+        allow="geolocation; microphone; camera"
+        src="https://form.jotform.com/231657184518058"
+        frameborder="0"
+        style={{minWidth:'100%',maxWidth:'100%',height:'539px',border:'none'}}
+        scrolling="no"
+      />
     </Box>
-    </Grid>
   );
 };
 
 export default LeadForm;
-
