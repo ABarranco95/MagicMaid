@@ -19,6 +19,7 @@ import { CssBaseline } from '@mui/material';
 import '@fontsource/poppins';
 import ServicesSection from './components/ServicesSection/ServicesSection';
 import TestimonialsSection from './components/TestimonialsSection/TestimonialsSection';
+import ServiceChecklistPage from './pages/ServiceChecklistPage';
 
 const GlobalStyle = styled('body')({
   margin: 0,
@@ -81,6 +82,7 @@ const AppContent = () => {
           <Route path='/contact-us' element={<ContactUsPage />} />
           <Route path='/blog' element={<BlogPage /> } />
           <Route path="/gift-cards" element={<GiftCards />} />
+          <Route path="/service-checklists" element={<ServiceChecklistPage />}/>
         </Routes>
         <Footer />
         </Container>

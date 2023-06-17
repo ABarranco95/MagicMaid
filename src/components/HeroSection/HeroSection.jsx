@@ -9,13 +9,13 @@ const HeroSection = () => {
   const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <Grid container component={Box} sx={{ overflow: 'hidden', bgcolor: '#ffffff', px: 2 }}>
+    <Grid container component={Box} sx={{ overflow: 'hidden', bgcolor: '#ffffff', px: 2, marginBottom: 10 }}>
       <Helmet>
         <title>Home Cleaning Services in Fresno, Madera, and Clovis, CA | Home Sparkle Pros</title>
         <meta name="description" content="Home Sparkle Pros provides trusted, professional home cleaning services in Fresno, Madera, and Clovis, CA. Book online or get a free quote today!" />
       </Helmet>
 
-      <Grid item xs={12} md={6} order={{ xs: 1, md: 1 }}>
+      <Grid item xs={12} md={6} order={{ xs: 1, md: 1 }} >
         <Box
           sx={{
             display: 'flex',
@@ -24,9 +24,10 @@ const HeroSection = () => {
             alignItems: matchesMD ? 'flex-start' : 'center',
             textAlign: matchesMD ? 'left' : 'center',
             p: { xs: 2, sm: 4, md: 6 },
+            
           }}
         >
-          <Typography variant={matchesMD ? 'h3' : 'h3'} align="inherit" gutterBottom sx={{ color: '#165085', fontWeight: 'fontWeightBold' }}>
+          <Typography variant={matchesMD ? 'h3' : 'h4'} align="inherit" gutterBottom sx={{ color: '#165085', fontWeight: 'fontWeightBold' }}>
           Experience The Difference Of A Sparkling Clean Home Without The Stress
           </Typography>
           <Typography variant="h6" align="inherit" gutterBottom sx={{ color: '#165085' }}>

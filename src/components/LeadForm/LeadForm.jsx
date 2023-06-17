@@ -51,7 +51,7 @@ const LeadForm = () => {
   }, []);
 
   return (
-    <Box sx={{ mt: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '0 auto', width: '80%' }}>
+    <Box sx={{  display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
       <Helmet>
         <title>Lead Form</title>
         <meta name="description" content="Submit your information to become a lead." />
