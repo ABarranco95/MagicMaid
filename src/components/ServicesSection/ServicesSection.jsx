@@ -59,10 +59,10 @@ const ServicesSection = () => {
         <Typography variant="h6" align="center" gutterBottom sx={{ color: '#FFFFFF', fontWeight: 400, p: { xs: 2, sm: 4, md: 6 } }}>
           We are here to change the image of cleaning companies by offering fast, convenient services for customers of all sizes. At the very start of this
         </Typography>
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={3} justifyContent="center" >
           {services.map((service) => (
             <Grid item xs={12} sm={7} md={6} lg={4} key={service.name} >
-              <Card sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', minWidth: 380, maxWidth: 340, m: 1, borderRadius: 2, boxShadow: 5, backgroundColor: '#ffffff' }}>
+              <Card sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', minWidth: 280, maxWidth: 340, m: 1, borderRadius: 2, boxShadow: 5, backgroundColor: '#ffffff' }}>
               <CardMedia component="img" image={service.image} alt={`${service.name} - Home Sparkle Pros`} sx={{ objectFit: 'cover', height: 200, width: 'auto', borderRadius: '2px 2px 0 0' }} />
 <CardContent sx={{ padding: '2rem' }}>
   <Typography variant="h5" align="center" sx={{ color: '#165085', fontWeight: 700 }}>{service.name}</Typography>

@@ -15,7 +15,7 @@ const HomePage = () => {
       </Helmet>
       <HeroSection />
       <ServicesSection />
-      <LeadForm />
+      {/* <LeadForm /> */}
       <TestimonialsSection />
       {/* <CallToActionSection /> */}
 

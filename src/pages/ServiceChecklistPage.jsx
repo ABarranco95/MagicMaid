@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Typography, Container, Box, Card, CardMedia, CardContent, CardActionArea, Collapse, useMediaQuery, useTheme, Grid } from '@mui/material';
+import { Typography, Container, Box, Card, CardContent, CardActionArea, Collapse, useMediaQuery, useTheme, Grid } from '@mui/material';
+import ModalImage from 'react-modal-image';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
 import standardCleaningImage from '../assets/standard-cleaning-checklist.png';
 import deepCleaningImage from '../assets/deep-cleaning-checklist.png';
 import moveCleaningImage from '../assets/move-in-out-checklist.png';
@@ -13,16 +12,9 @@ const ServiceChecklistPage = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [open, setOpen] = useState({ standard: false, deep: false, move: false });
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxImage, setLightboxImage] = useState('');
 
   const handleExpandClick = (type) => {
     setOpen({ ...open, [type]: !open[type] });
-  };
-
-  const handleLightboxOpen = (image) => {
-    setLightboxImage(image);
-    setLightboxOpen(true);
   };
 
   const checkLists = [
@@ -72,21 +64,20 @@ const ServiceChecklistPage = () => {
                   </CardContent>
                 </CardActionArea>
                 <Collapse in={open[type]} timeout="auto" unmountOnExit>
-                  <CardMedia component="img" image={image} alt={`${title}`} sx={{ objectFit: 'contain', width: 'auto', maxHeight: 500, cursor: 'pointer' }} onClick={() => handleLightboxOpen(image)} />
+                  <ModalImage
+                    small={image}
+                    large={image}
+                    alt={title}
+                  />
                 </Collapse>
               </Card>
             </Box>
           </Grid>
         ))}
       </Grid>
-      {lightboxOpen && (
-        <Lightbox
-          mainSrc={lightboxImage}
-          onCloseRequest={() => setLightboxOpen(false)}
-          enableZoom={false}
-        />
-      )}
     </Container>
+ 
+
   );
 };
 

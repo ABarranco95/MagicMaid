@@ -22,7 +22,14 @@ import { Container } from '@mui/material';
 
 const drawerWidth = 240;
 
-const navItems = ['Home', 'About', 'Residential Cleaning', 'Areas Served', 'Cleaning Checklist', 'Contact'];
+const navItems = [
+  { title: 'Home', path: '/' },
+  // { title: 'About', path: '/about' },
+  { title: 'Residential Cleaning', path: '/services/standard-cleaning' },
+  // { title: 'Areas Served', path: '/areas-served' },
+  { title: 'Cleaning Checklist', path: '/service-checklists' },
+  { title: 'Contact', path: '/contact-us' },
+];
 
 const Navbar = (props) => {
   const { window } = props;
@@ -31,7 +38,7 @@ const Navbar = (props) => {
   const matches = useMediaQuery(theme.breakpoints.up('md'));
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen(!mobileOpen);
   };
 
   const drawer = (
@@ -46,8 +53,8 @@ const Navbar = (props) => {
         {navItems.map((item, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <Link to={`/${item.toLowerCase().replace(' ', '-')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <ListItemText primary={item} />
+              <Link to={item.path} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <ListItemText primary={item.title} />
               </Link>
             </ListItemButton>
           </ListItem>
@@ -72,7 +79,7 @@ const Navbar = (props) => {
           <Toolbar sx={{ 
             backgroundColor: '#fff', 
             display: 'flex', 
-            justifyContent: { xs: 'center', md: 'space-between' },
+            justifyContent: { xs:           'center', md: 'space-between' },
             '& .logo': {
               marginBottom: { xs: 0, md: 0 },
             }
@@ -84,7 +91,7 @@ const Navbar = (props) => {
               variant="outlined" 
               sx={{ 
                 borderRadius: 28, 
-                borderColor:                 'red', 
+                borderColor: 'red', 
                 color: 'red', 
                 textTransform: 'none', 
                 minWidth: 200, 
@@ -109,7 +116,7 @@ const Navbar = (props) => {
         <Container>
           <Toolbar>
             <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-            <IconButton
+              <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 edge="start"
@@ -120,8 +127,8 @@ const Navbar = (props) => {
               </IconButton>
               <Typography variant="button" component="div" sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' }, textAlign: 'center', fontSize: '1.2em', marginX: '0.5em' }}>
                 {navItems.map((item, index) => (
-                  <Link key={index} to={`/${item.toLowerCase().replace(' ', '-')}`} style={{ color: '#fff', textDecoration: 'none' }}>
-                    {item}{index !== navItems.length - 1 && ' | '}
+                  <Link key={index} to={item.path} style={{ color: '#fff', textDecoration: 'none', margin: '0 10px' }}>
+                    {item.title}
                   </Link>
                 ))}
               </Typography>
