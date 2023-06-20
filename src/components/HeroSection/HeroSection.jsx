@@ -14,7 +14,7 @@ const HeroSection = () => {
         <title>Home Cleaning Services in Fresno, Madera, and Clovis, CA | Home Sparkle Pros</title>
         <meta name="description" content="Home Sparkle Pros provides trusted, professional home cleaning services in Fresno, Madera, and Clovis, CA. Book online or get a free quote today!" />
       </Helmet>
-
+    
       <Grid item xs={12} md={6} order={{ xs: 1, md: 1 }} >
         <Box
           sx={{
@@ -52,20 +52,20 @@ const HeroSection = () => {
             >
               Get A Quote
             </Button>
-            <Button
+            <Button 
               variant="outlined"
-              color="inherit"
-              component={Link}
-              to="/get-a-free-quote"
+              color="secondary"
               sx={{
                 textTransform: 'none',
                 borderRadius: 28,
                 minWidth: 200,
                 py: 1,
-                borderColor: '#fff',
+                border: '1px solid red',
+                borderColor: 'red'
               }}
+              href="tel:5597852857"
             >
-              Call Now For A FREE Estimate
+              Call Now for Free Quote
             </Button>
           </Box>
         </Box>

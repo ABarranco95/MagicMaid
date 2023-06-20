@@ -108,45 +108,57 @@ const ServicesSection = () => {
     my: 5,
   }}
 >
-<Button
-  variant="contained"
-  color="secondary"
-  component={Link}
-  to="/get-a-free-quote"
-  sx={{
-    textTransform: 'none',
-    borderRadius: 28,
-    minWidth: 200,
-    py: 1.5,
-    backgroundColor: '#C8102E',
-    mt: 3,
-    mb: 2,
-  }}
->
-  Get Free Quote
-</Button>
-<Typography
-  variant="h6"
-  align="center"
-  sx={{
-    color: '#fff',
-    fontStyle: 'italic',
-    fontWeight: 600,
-  }}
->
-  Call Now For A FREE Estimate 
-  <Link
-    href="tel:+15597852857"
+  <Button
+    variant="contained"
+    color="secondary"
+    component={Link}
+    to="/get-a-free-quote"
+    sx={{
+      textTransform: 'none',
+      borderRadius: 28,
+      minWidth: 200,
+      py: 1.5,
+      backgroundColor: '#C8102E',
+      mt: 3,
+      mb: 2,
+    }}
+  >
+    Get Free Quote
+  </Button>
+  <Typography
+    variant="h6"
+    align="center"
+    sx={{
+      color: '#fff',
+      fontStyle: 'italic',
+      fontWeight: 600,
+      textDecoration: 'none',
+      marginBottom: '0.5rem',
+    }}
+  >
+    Call Now For A FREE Estimate
+  </Typography>
+  <Box
     sx={{
       color: '#fff',
       textDecoration: 'none',
       fontWeight: 700,
+      cursor: 'pointer',
     }}
   >
-   559-785-2857
-  </Link>
-</Typography>
+    <Link
+      to="tel:5597852857"
+      style={{
+        color: 'inherit',
+        textDecoration: 'inherit',
+      }}
+    >
+     559-785-2857
+    </Link>
+  </Box>
 </Box>
+
+
 </Container>
 </Grid>
 );

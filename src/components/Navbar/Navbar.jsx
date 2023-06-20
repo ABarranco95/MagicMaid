@@ -76,87 +76,97 @@ const Navbar = (props) => {
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="static" sx={{ backgroundColor: '#fff', pb: 0, color: '#fff', boxShadow: 'none',  }}>
+        <Container maxWidth='lg'>
+
+        
           <Toolbar sx={{ 
             backgroundColor: '#fff', 
             display: 'flex', 
-            justifyContent: { xs:           'center', md: 'space-between' },
+            justifyContent: { xs: 'space-between', md: 'space-between' },
             '& .logo': {
-              marginBottom: { xs: 0, md: 0 },
-            }
-          }}>
-            <Link to="/" className="logo">
-              <img src={logo} alt="Company Logo" style={{ height: '120px', width: 'auto', objectFit: 'contain' }} />
-            </Link>
-            <Button             
-              variant="outlined" 
-              sx={{ 
-                borderRadius: 28, 
-                borderColor: 'red', 
-                color: 'red', 
-                textTransform: 'none', 
-                minWidth: 200, 
-                height: 60,
-                py: 1, 
-                display: { xs: 'none', md: 'block' },
-                '&:hover': {
-                  backgroundColor: 'red',
-                  color: '#fff',
-                }
+              marginBottom: { xs: 2, md: 2}    ,
+              marginTop: { xs: 2, md: 2}             },
               }}
             >
-              Book Now
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
-    
-      <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <AppBar position="static" sx={{ backgroundColor: '#165085', pb: 2, color: '#fff', boxShadow: 'none' }}>
-        <Container>
-          <Toolbar>
-            <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { xs: 'block', md: 'none' } }}
-              >
-                <MenuIcon sx={{ color: mobileOpen ? theme.palette.secondary.main : '#fff' }} />
-              </IconButton>
-              <Typography variant="button" component="div" sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' }, textAlign: 'center', fontSize: '1.2em', marginX: '0.5em' }}>
-                {navItems.map((item, index) => (
-                  <Link key={index} to={item.path} style={{ color: '#fff', textDecoration: 'none', margin: '0 10px' }}>
-                    {item.title}
-                  </Link>
-                ))}
-              </Typography>
-            </Box>
-          </Toolbar>
-          </Container>
-        </AppBar>
-        <Box component="nav">
-          <Drawer
-            container={container}
-            variant="temporary"
-            anchor={'right'}
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-            sx={{
-              display: { xs: 'block', md: 'none' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-            }}
-          >
-            {drawer}
-          </Drawer>
+              <Link to="/" className="logo">
+                <img src={logo} alt="Company Logo" style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+              </Link>
+              <Link to="/book-a-service"  style={{
+        color: 'inherit',
+        textDecoration: 'inherit',
+      }}>
+                <Button             
+                  variant="outlined" 
+                  sx={{ 
+                    borderRadius: 28, 
+                    borderColor: 'red', 
+                    color: 'red', 
+                    textTransform: 'none', 
+                    minWidth: 170, 
+                    height: 50,
+                    py: 1, 
+                    display: { xs: 'none', md: 'block' },
+                    '&:hover': {
+                      backgroundColor: 'red',
+                      color: '#fff',
+                    }
+                  }}
+                >
+                  Book Now
+                </Button>
+              </Link>
+            </Toolbar>
+            </Container>
+          </AppBar>
+        </Box>
+      
+        <Box sx={{ display: 'flex' }}>
+          <CssBaseline />
+          <AppBar position="static" sx={{ backgroundColor: '#165085', pb: 2, color: '#fff', boxShadow: 'none' }}>
+          <Container>
+            <Toolbar>
+              <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{ mr: 2, display: { xs: 'block', md: 'none' } }}
+                >
+                  <MenuIcon sx={{ color: mobileOpen ? theme.palette.secondary.main : '#fff' }} />
+                </IconButton>
+                <Typography variant="button" component="div" sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' }, textAlign: 'center', fontSize: '1.2em', marginX: '0.5em' }}>
+                  {navItems.map((item, index) => (
+                    <Link key={index} to={item.path} style={{ color: '#fff', textDecoration: 'none', margin: '0 10px' }}>
+                      {item.title}
+                    </Link>
+                  ))}
+                </Typography>
+              </Box>
+            </Toolbar>
+            </Container>
+          </AppBar>
+          <Box component="nav">
+            <Drawer
+              container={container}
+              variant="temporary"
+              anchor={'right'}
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+              }}
+            >
+              {drawer}
+            </Drawer>
+          </Box>
         </Box>
       </Box>
-    </Box>
-  );
+    );
 };
 
 Navbar.propTypes = {
