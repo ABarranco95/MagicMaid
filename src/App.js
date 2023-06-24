@@ -11,6 +11,7 @@ import GiftCards from './components/GiftCard/GiftCards';
 import StandardCleanPage from './pages/CleaningsPage/StandardCleanPage/StandardCleanPage';
 import DeepCleanPage from './pages/CleaningsPage/DeepCleanPage/DeepCleanPage';
 import MovingCleanPage from './pages/CleaningsPage/MovingCleanPage/MovingCleanPage';
+import AdLandingPage from './components/AdLandingPage'
 import { Box, Container, ThemeProvider, createTheme } from '@mui/material';
 import { styled } from '@mui/system';
 import { CssBaseline } from '@mui/material';
@@ -83,6 +84,8 @@ const AppContent = () => {
           <Route path='/blog' element={<BlogPage /> } />
           <Route path="/gift-cards" element={<GiftCards />} />
           <Route path="/service-checklists" element={<ServiceChecklistPage />}/>
+          <Route path="/get-free-quote" element={<AdLandingPage />} />
+          
         </Routes>
         <Footer />
         </Container>

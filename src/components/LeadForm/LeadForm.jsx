@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography ,Container} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const LeadForm = () => {
+  const theme = useTheme();
 
   useEffect(() => {
     let iframe = document.getElementById("JotFormIFrame-231657184518058");
@@ -30,7 +32,7 @@ const LeadForm = () => {
           iframe.scrollIntoView();
           break;
         case "setHeight":
-          iframe.style.height = args[1] + "px";
+          iframe.style.height = (args[1] * 0.9) + "px";  // Cut iframe height by 10%
           break;
         case "collapseErrorPage":
           if (iframe.clientHeight > window.innerHeight) {
@@ -53,9 +55,13 @@ const LeadForm = () => {
   return (
     <Box sx={{  display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
       <Helmet>
-        <title>Lead Form</title>
-        <meta name="description" content="Submit your information to become a lead." />
+        <title>Free Quote</title>
+        <meta name="description" content="Unlock a world of pristine living. Get your free quote today!" />
       </Helmet>
+      <Container maxWidth="lg">
+
+      <Typography variant="h2" component="h1" gutterBottom sx={{ fontSize: { xs: 'h4.fontSize', sm: 'h3.fontSize', md: 'h2.fontSize' } }}>Your Sparkling Clean Home Awaits</Typography>
+      <Typography variant="subtitle1" gutterBottom sx={{ fontSize: { xs: 'subtitle2.fontSize', sm: 'subtitle1.fontSize', md: 'h6.fontSize' } }}>Ready to unlock a whole new level of clean? Just fill out the form below and let us turn your home into a sparkling oasis. Your satisfaction is our priority, and we won't rest until your home is as clean as you've always dreamed it could be!</Typography>
       
       <iframe
         id="JotFormIFrame-231657184518058"
@@ -68,8 +74,11 @@ const LeadForm = () => {
         style={{minWidth:'100%',maxWidth:'100%',height:'539px',border:'none'}}
         scrolling="no"
       />
+            </Container>
+
     </Box>
   );
 };
 
 export default LeadForm;
+
